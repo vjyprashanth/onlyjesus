@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Responsive Header</title>
+    <style>
+.life{ padding: 25px; text-align: justify; text-indent: 35px;}
+.sp{padding: 25px; text-align: justify; text-indent: 30px;}
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> email@example.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> 123 Street, City</span>
+            <span><i class="fas fa-phone"></i> +123 456 7890</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+ 
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+<!-- header strats here -->
+<nav class="navbar">
+    <div class="logo">Yashua Ministries</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="about.html">About Us</a></li> -->
+        <li><a href="events..html">Events</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="hell.html">Hellfire</a></li>
+       
+        <li>
+            <a href="songs.html">Songs &#9662;</a>
+            <!-- <ul class="dropdown">
+                <li><a href="album.html">Albums</a></li>
+                <li><a href="vidoes.html">Videos</a></li>
+                
+            </ul> -->
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="slider" id="slider">
+    <div class="slides">
+        <div class="slide">
+            <img src="slider/1.png" alt="Slide 1">
+            <div class="slide-content">
+                <h2>Jesus is the only saviour</h2>
+                <p style="padding-left: 22px;">Because he alone came and died for our sins</p>
+                <h4>Yeshua Loves Ministris</h4>
+                <button class="btn">Read More</button>
+                <button class="btn">Contact</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="slider/2.png" alt="Slide 2">
+            <div class="slide-content">
+                <h2>His pain is our gain</h2>
+                <p>He died so that we may live</p>
+                <h4>Yeshua Loves Ministris</h4>
+                <button class="btn">Read More</button>
+                <button class="btn">Contact</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="slider/3.png" alt="Slide 3">
+            <div class="slide-content">
+                <h2 class="today">Today  is the day of salvation</h2>
+                <p>Accept Jesus and Escape Hellfire</p>
+                <h4>Yeshua Loves Ministris</h4>
+                <button class="btn">Read More</button>
+                <button class="btn">Contact</button>
+            </div>
+        </div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+    <script src="script..js"></script>
+</div>
+
+<h2>WELCOME TO OUR SITE</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#f5f5f5;">
+    <h3>LOVE OF JESUS</h2>
+    <p class="life">The love of Jesus is boundless, unconditional, and
+         life-transforming. It is a love that embraces the 
+         broken, forgives the sinner, and restores the weary. 
+         Through His sacrifice on the cross, Jesus demonstrated 
+         the greatest act of love—giving His life so that we may
+          be saved and reconciled with God. His love is not based
+           on our worthiness but on His grace, offering hope, peace,
+            and eternal life to all who believe in Him. No matter our
+             past or struggles, His love remains steadfast, guiding us
+              with mercy and filling our hearts with joy and purpose
+              The love of Jesus is the purest expression of God’s heart toward humanity. It is a love that never fails, never gives up, and never turns away. Jesus showed His love through compassion, healing the sick, comforting the brokenhearted, and welcoming the outcasts. His love reaches beyond our failures and weaknesses, offering forgiveness
+            </p> <br>
+          </div>
+  <div class="column" style="background-color:#ffffff;">
+    <h3>HELL FIRE</h3>
+    <p class="sp">Jesus spoke about hellfire as a place of judgment for those who reject God and choose a life of sin. He described it as a place of "outer darkness" where there is "weeping and gnashing of teeth" (Matthew 25:30). In Mark 9:43-48, He warned that it is better to cut off a sinful hand or foot than to be cast into "hell, where the fire never goes out." He also referred to Gehenna, a term for hell, as a place of unquenchable fire (Matthew 10:28), emphasizing the eternal nature of separation from God.
+
+        However, Jesus' warnings about hell were not meant to condemn but to lead people to
+         repentance and salvation. His ultimate message was one of love and redemption,
+          urging all to turn to Him for forgiveness and eternal life. Therefore I request all who are reading to choose life and live with Christ in heaven
+        Tomorrow mat not be yours, today is theday of salvation. we will be happy to help you plz contact us.</p>
+  </div>
+</div>
+<div class="footer">
+    <div class="footer-column footer-links">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <a href="#">News</a>
+        <a href="#">Songs</a>
+        <a href="#">Sermons</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="footer-column footer-slider">
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Jesus Saves</div>
+                <div class="accordion-content">He is the way, truth and the life</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Hellfire</div>
+                <div class="accordion-content">Its Eternal whee fire will not quench.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Heaven</div>
+                <div class="accordion-content">Its Eternal Happiness where Jesus Himself wil be there</div>
+            </div>
+        </div>
+    
+        <script>
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        </script>
+    </div>
+    <div class="footer-column footer-text">
+        <h3>About Us</h3>
+        <p>We are dedicated to bringing you the best in gospel music and sermons. Stay connected with us for the latest updates.</p>
+    </div>
+</div>
+</body>
+</html>
