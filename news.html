@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive News Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+.news-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.news-column {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.news-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+p {
+    font-size: 14px;
+    color: #555;
+}
+.read-more {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.read-more:hover {
+    background: #0056b3;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+/* Large Close Button */
+.close {
+    font-size: 30px;
+    font-weight: bold;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .news-row {
+        flex-direction: column;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+.news-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.news-columns {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.news-item {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.news-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+p {
+    font-size: 14px;
+    color: #555;
+}
+.read-more {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.read-more:hover {
+    background: #0056b3;
+}
+
+/* Must Read News Column */
+.must-read {
+    flex: 1;
+    min-width: 250px;
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.must-read h2 {
+    font-size: 20px;
+    color: yellow;
+    text-align: center;
+}
+.must-read-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: #444;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.must-read-item:hover {
+    background: #555;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+/* Large Close Button */
+.close {
+    font-size: 30px;
+    font-weight: bold;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .news-section {
+        flex-direction: column;
+    }
+    .news-columns {
+        flex-direction: column;
+    }
+    .must-read {
+        margin-top: 20px;
+    }
+}
+body {
+    background-color: #181616;
+}
+
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+.contact-info i {
+    margin-right: 8px;
+    color: orange;
+}
+.contact-info span {
+    margin-right: 20px;
+    font-size: 14px;
+}
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: orange;
+}
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+    .contact-info span {
+        display: block;
+        margin: 5px 0;
+    }
+    .social-icons {
+        margin-top: 10px;
+    }
+}
+.navbar{
+    background-color:#0F52BA;
+}
+.navbar {
+    
+margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0F52BA;
+   
+    height: 100px;
+}
+.navbar .logo {
+    color: orange;
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    line-height: 11px;
+}
+.nav-links li {
+    position: relative;
+    line-height: 15px;
+}
+.nav-links li a {
+    line-height: 8px;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    line-height: 50px;
+    font-weight: bold;
+   
+    align-items: center;
+}
+.nav-links li a:hover {
+    background: orange;
+    border-radius: 5px;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.dropdown li {
+    display: block;
+}
+.dropdown li a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
+.dropdown li a:hover {
+    background: darkorange;
+}
+.nav-links li:hover .dropdown {
+    display: block;
+}
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #1a1a2e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        text-align: center;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> email@example.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> 123 Street, City</span>
+            <span><i class="fas fa-phone"></i> +123 456 7890</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+ 
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+<!-- header strats here -->
+<nav class="navbar">
+    <div class="logo">Yashua Ministries</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="about.html">About Us</a></li> -->
+        <li><a href="events..html">Events</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="Hellfire.html">Hellfire</a></li>
+       
+        <li>
+            <a href="songs.html">Songs &#9662;</a>
+            <!-- <ul class="dropdown">
+                <li><a href="album.html">Albums</a></li>
+                <li><a href="vidoes.html">Videos</a></li>
+                
+            </ul> -->
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <div class="container">
+        
+        <h1>Latest News</h1>
+        <div class="news-row">
+            <div class="news-column">
+                <img src="images/pp.jpg" alt="News 1">
+                <h2>Paul Washer says the Church must be more 'militant' on missions: 'Men were made to fight'</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(1)">Read More</button>
+            </div>
+            <div class="news-column">
+                <img src="images/rc.jpg" alt="News 2">
+                <h2>Rick Warren's X account hacked by 'unscrupulous criminals' pushing meme coin</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(2)">Read More</button>
+            </div>
+            <div class="news-column">
+                <img src="images/ro mor.png" alt="News 3">
+                <h2>Gateway Church founder Robert Morris indicted for child sexual abuse of Cindy Clemishire, Okla. AG says </h2>
+                <p> </p> <button class="read-more" onclick="openModal(3)">Read More</button>
+            </div>
+            <div class="news-column">
+                <img src="images/lee.jpg" alt="News 4">
+                <h2>Lee Greenwood joins effort to place Trump-endorsed Bible in Oklahoma public schools</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(4)">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for full news -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal(1)">×</button>
+            <h2>News Headline 1</h2>
+            <p>Former pastor Steven Lawson has acknowledged that he has “sinned grievously,” 
+                speaking out for the first time about the scandal that removed him from ministry. 
+
+                In an X post on Wednesday, Lawson wrote: “I have sinned grievously against the <br>
+                Lord, against my wife, my family, and against countless numbers of you by having 
+                a sinful relationship with a woman not my wife. <br> <br> I am deeply broken that I have betrayed and deceived my wife, devastated my children, brought shame to the name of Christ, reproach upon His church, and harm to many ministries.”
+                
+                “You may wonder why I have been silent and largely invisible since the news of
+                 my sin became known. I have needed the time to search my own soul to determine that my repentance is real,” he insisted..</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal(2)">×</button>
+            <h2>News Headline 2</h2>
+            <p>Full news content for the second article...</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal(3)">×</button>
+            <h2>News Headline 3</h2>
+            <p>Full news content for the third article...</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal(4)">×</button>
+            <h2>News Headline 4</h2>
+            <p>Full news content for the fourth article...</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(newsId) {
+            document.getElementById('modal' + newsId).style.display = "flex";
+        }
+        function closeModal(newsId) {
+            document.getElementById('modal' + newsId).style.display = "none";
+        }
+    </script>
+
+<div class="container">
+    <h1>Latest News</h1>
+    <div class="news-section">
+        <!-- Two News Columns -->
+        <div class="news-columns">
+            <div class="news-item">
+                <img src="images/pp.jpg" alt="News 1">
+                <h2>News Headline 1</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(1)">Read More</button>
+            </div>
+            <div class="news-item">
+                <img src="images/rc.jpg" alt="News 2">
+                <h2>News Headline 2</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(2)">Read More</button>
+            </div>
+            <div class="news-item">
+                <img src="images/lee.jpg" alt="News 3">
+                <h2>News Headline 3</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(3)">Read More</button>
+            </div>
+            <div class="news-item">
+                <img src="images/rc.jpg" alt="News 4">
+                <h2>News Headline 4</h2>
+                <p>Brief summary of the news...</p>
+                <button class="read-more" onclick="openModal(4)">Read More</button>
+            </div>
+        </div>
+
+        <!-- Must Read Column -->
+        <div class="must-read">
+            <h2>Must Read</h2>
+            <div class="must-read-item" onclick="openModal(5)">🔥 Special Feature: Breaking News</div>
+            <div class="must-read-item" onclick="openModal(6)">🚀 Trending: Technology Update</div>
+            <div class="must-read-item" onclick="openModal(7)">💰 Market Insights: Stock Analysis</div>
+            <div class="must-read-item" onclick="openModal(8)">🌍 World News: Global Developments</div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals for full news -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal(1)">×</button>
+        <h2>News Headline 1</h2>
+        <p>Full news content for the first article...</p>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal(2)">×</button>
+        <h2>News Headline 2</h2>
+        <p>Full news content for the second article...</p>
+    </div>
+</div>
+
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal(5)">×</button>
+        <h2>🔥 Special Feature: Breaking News</h2>
+        <p>Full news content for must-read section...</p>
+    </div>
+</div>
+
+<script>
+    function openModal(newsId) {
+        document.getElementById('modal' + newsId).style.display = "flex";
+    }
+    function closeModal(newsId) {
+        document.getElementById('modal' + newsId).style.display = "none";
+    }
+</script>
+<a href="mailto:someone@example.com">Send email</a>
+</body>
+</html>
