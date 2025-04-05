@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Music Player with Navigation</title>
+    <style>
+        /* General Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #e29b9b;
+            background-image: url('pro.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background: #0F52BA;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Responsive Menu */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: black;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Music Player */
+        .iphone {
+            width: 300px;
+            height: 600px;
+            background: black;
+            border-radius: 40px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .screen {
+            width: 260px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .footer-column {
+            max-width: 300px;
+        }
+
+        .footer a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+   
+
+        <div class="top-header">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> email@example.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> 123 Street, City</span>
+                <span><i class="fas fa-phone"></i> +123 456 7890</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+     
+        <script>
+            document.querySelector(".menu-toggle").addEventListener("click", function() {
+                document.querySelector(".nav-links").classList.toggle("active");
+            });
+        </script>
+    <!-- header strats here -->
+    <nav class="navbar">
+        <div class="logo">Yashua Ministries</div>
+        <span class="menu-toggle">&#9776;</span>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="about.html">About Us</a></li> -->
+            <li><a href="events..html">Events</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="Hellfire.html">Hellfire</a></li>
+           
+            <li>
+                <a href="songs.html">Songs &#9662;</a>
+                <!-- <ul class="dropdown">
+                    <li><a href="album.html">Albums</a></li>
+                    <li><a href="vidoes.html">Videos</a></li>
+                    
+                </ul> -->
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Music Player -->
+    <div class="iphone">
+        <div class="screen">
+            <h2>Now Playing</h2>
+            <p id="song-title">Select a song</p>
+            <div class="progress" id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div class="controls">
+                <button onclick="prevTrack()">⏪</button>
+                <button onclick="togglePlay()">▶️</button>
+                <button onclick="nextTrack()">⏩</button>
+            </div>
+        </div>
+        <audio id="audio"></audio>
+        <div class="playlist" id="playlist"></div>
+        <div class="playlist">
+            <ul id="playlist-list">
+                <li onclick="loadTrack(0)">O Manchi</li>
+                <li onclick="loadTrack(1)">Carona Double</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Events</a>
+            <a href="#">News</a>
+            <a href="#">Songs</a>
+            <a href="#">Sermons</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-column">
+            <h3>Gallery</h3>
+            <p>Slider Placeholder</p>
+        </div>
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>We are dedicated to bringing you the best in gospel music and sermons. Stay connected with us for the latest updates.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+
+        // Music Player Functions
+        let audio = document.getElementById('audio');
+        let playButton = document.querySelector(".controls button:nth-child(2)");
+        let songTitle = document.getElementById("song-title");
+        
+        let tracks = [
+            { name: "O Manchi", src: "o manchi final 1.mp3" },
+            { name: "Carona Double", src: "carona final audio double.mp3" }
+        ];
+        
+        let currentTrackIndex = 0;
+        function loadTrack(index) {
+            audio.src = tracks[index].src;
+            songTitle.textContent = tracks[index].name;
+            audio.play();
+            playButton.textContent = "⏸️";
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playButton.textContent = "⏸️";
+            } else {
+                audio.pause();
+                playButton.textContent = "▶️";
+            }
+        }
+    </script>
+
+</body>
+</html>

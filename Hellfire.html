@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Responsive Header</title>
+    <style>
+        
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        .navbar{
+            position: relative;
+       
+        }
+       
+        
+        #moreText {
+            display: none;
+        }
+        .read-more-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        /* Flexbox layout for links */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 20px;
+        }
+        .img{
+            float: left;
+        }
+        .som{
+            text-align: justify;
+            font-size: 18px;
+        }
+        .imgg{
+            float: right;
+            padding: 15px;
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Black background when modal is open */
+        .modal.active {
+            background-color: rgba(0, 0, 0, 0.9); /* Black overlay */
+        }
+
+        /* Modal content */
+        .modal-content {
+            background: white;
+            padding: 20px;
+            width: 90%; /* Increased width */
+            max-height: 80vh; /* Adjusted height */
+            overflow-y: auto; /* Enables scroll if content is too long */
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .Melea{
+            float: left;
+            padding: 15px;
+        }
+        p{
+            text-align: justify;
+            margin: 15px;
+        }
+        .divine{
+          color: #000000;
+          padding-left: 15px;
+        }
+        .heaven{
+            float: right;
+            padding: 15px;
+        }
+        .hell{
+            float: left;
+            padding: 15px;
+        }
+        .bill{
+            float: left;
+            padding: 25px;
+        }
+        .bil{float: right; padding: 25px;}
+        .ricardo{
+            float: left;
+            padding: 20px;
+        }
+
+        .ricar{
+            float: right;
+            padding: 25px;
+        }
+        .angel{
+            float: left;
+            padding: 20px;
+        }
+        .michael{
+            float: right;
+            padding: 20px;
+        }
+        .galaxy{
+            float: left;
+            padding: 25px;
+        }
+        .third{
+            float: left;
+            padding: 25px;
+        }
+        .power{
+            float: right;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> email@example.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> 123 Street, City</span>
+            <span><i class="fas fa-phone"></i> +123 456 7890</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+ 
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+<!-- header strats here -->
+<nav class="navbar">
+    <div class="logo">Yashua Ministries</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="about.html">About Us</a></li> -->
+        <li><a href="events..html">Events</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="Hellfire.html">Hellfire</a></li>
+       
+        <li>
+            <a href="songs.html">Songs &#9662;</a>
+            <!-- <ul class="dropdown">
+                <li><a href="album.html">Albums</a></li>
+                <li><a href="vidoes.html">Videos</a></li>
+                
+            </ul> -->
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- Flexbox links -->
+    <div class="flex-container">
+        <a href="javascript:void(0);" onclick="openModal('modal1')">Testimony Of 5 Minutes In Hell By Iyah Melea </a>
+        <a href="javascript:void(0);" onclick="openModal('modal2')">Divine Revelation Of Heaven And Hell By Iyah Melea</a>
+        <a href="javascript:void(0);" onclick="openModal('modal3')">8 Hours in Heaven By Ricardo Cid</a>
+        <a href="javascript:void(0);" onclick="openModal('modal4')">Divine Revelation Of Hell By Bill Wiese-23 Minutes In Hell</a>
+    </div>
+    
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal1')">X</button>
+            <h2>Testimony Of 5 Minutes In Hell</h2>
+            <img src="images/iyah Melea (2).jpg" alt="" width="20%" class="img">
+            <p class="som">My name is Melea, I’m 21 years old Melea and live in Quezon City,
+                 Philippines. I was raised a Christian, I knew my religion, but I didn’t 
+                 know God. When I was a teenager (13-16 years) I became a carnal Christian
+                  and I went to church but also loved the world. Until one day, on March
+                   2011 my mom brought me the testimony of Angelica Zambrano
+                    (A girl who testified heaven and hell). After reading, 
+                    I cried repenting and confessing all of my sins. <br> <br>
+
+                I had another vision encounter with the Lord in January 2015. I can still 
+                remember the very details of the scene. It was a time when I drifted back
+                 to becoming a lukewarm Christian. I was in a heavy trial. I even doubted
+                  about my calling and things taught by the Lord (see my first testimony).
+                   One morning I woke up at exactly 5 am because I had to prepare breakfast
+                    for my younger sister. After that, the Holy Spirit told me to read my 
+                    bible, but why? (Because I was lukewarm, isn’t it?) <br> <br>
+                
+                — Revelation 3:15-16 “I know your works, that you are neither cold nor hot.
+                 I could wish you were cold or hot. So then, because you are lukewarm, and 
+                 neither cold nor hot, I will vomit you out of My mouth.”
+                iyah MeleaI got my Bible and turned it to the book of Lamentations 3:22-28 
+                where It tells the unconditional love of the Lord. That it is always new in
+                 the morning. That great is thy faithfulness. After reading this, I cried to
+                  the Lord and ask Him to forgive me for being a lukewarm. After that I felt
+                   sleepy and started falling asleep in just a second!
+                
+                While asleep, my spiritual senses became active as I entered a dream vision. 
+                I knew my position while sleeping and I am aware of what’s happening. In this
+                 dream vision the scene terrified me, because I saw myself hanging upside down!
+                  A white rope ties all my hands and feet! Yes, I can still remember! And the 
+                  rope was coming from above, and I noticed I was spotlighted.
+                
+                I shouted “Lord!! Help me! Where am I? Why am I here?” However,
+                 nobody answered but I knew the light coming from above was the 
+                 light of the Lord. My eyes wandered to see where I am. I was 
+                 greatly startled when I realized I was in Hell! I saw magma or lava. <br><br>
+                <img src="images/WOMAN IN HELL (1).jpg" alt="" width="20%;" class="imgg">
+                i saw a lady in hell
+                
+                I saw a lake or sea of fire that seem to be boiling or burning sulphur. I also saw literal flames encircled and spread on that place. I guess that makes that place reddish and yellowish-orange but the whole background was darkness! There’s no source of light at all!
+                
+                READ ALSO: 4 Hours Interview In Hell By Allen Bamgbose.
+                
+                I noticed also that it was hot there. And I mean the hottest of the hottest! It felt like I am inside of a volcano! It was so irritating. A person couldn’t take stand of it. It seems like my skin is starting to drip off and melt! And yes! I could feel it on my body! I also noticed that the air was so thick and toxic that I couldn’t breathe normally. Lastly, I noticed my teeth gnashing. I don’t know why. Upon seeing this, I cried and shouted again “Oh Lord, my God! Take me out of this place!”
+                
+                — Rev 14:10 “he himself shall also drink of the wine of the wrath of God, which is poured out full strength into the cup of His indignation. He shall be tormented with fire and brimstone in the presence of the holy angels and in the presence of the Lamb.”
+                
+                Suddenly I heard someone speak, “My daughter, haven’t I told you we were going here?” I answered “Yes but, Why am I tied up? Why am I here? Don’t you love me anymore?” “My daughter, I love you so much and the reason why I brought you here is to testify. Here is where the disobedient, the unfaithful, unbelievers and all sinners belong.” He answered in a still, sweet and calm voice. “But Lord, I don’t like it this way! Take me out of here!” I cried in fear. But he said, “You have to experience this, my daughter”
+                
+                Meanwhile, I saw 4 demons approaching me. They look so horrible. They had horns on their heads, their face looked like angry beasts, they were muscular and their skin’s colour was dirty red. It was so frightening! When they approached me, some of them exclaimed “Ha-ha! At last, there’s another Christian has arrived here! We’ve been waiting for you!” and they all laughed.
+                
+                READ ALSO: A Letter From Hell To A Friend.
+                <br>
+                
+                I got extremely terrified! After that, they submerged me in burning sulphur that was just below me. I screamed in terror “NOOOOOO!!!!!!!” I have also felt it on my body! It was so painful, so unbearable that no man shall be able to stand it. While completely submerged, suddenly I was lifted up by the rope and they disappeared. I thought my skin had already melted because of the tremendous heat, but surprisingly, it came back to normal.
+                
+                — Matt 18:34-35 “And his master was angry, and delivered him to the TORTURERS until he should pay all that was due to him. So My heavenly Father also will do to you if each of you, from his heart, does not forgive his brother his trespasses.”
+                
+                I wept and called the Lord “My Lord, I don’t want to stay here! Please take me out of here. I can’t take this any longer” He didn’t answer. All of a sudden, I saw little insects, which are unfamiliar to me, and they were thousands of them! They started crawling all over my body and I screamed in terror “O, LORD!!!!! Help Me!!!!!!!”
+                
+                
+                
+                Then I saw a big scorpion with a sharp teeth crawling at my back and it bit me and again I screamed in terror. I also felt the biting’s on my body! That was so real. I never screamed and cried like this in my whole life!!! Again I called to the Lord and pleaded Him to take me out of this place and finally they were gone.
+                
+                Then the Lord said, “My daughter, you have to experience this. Those are the things a person will experience when they arrived here.” and then I saw a screen with another vision flashed before my eyes. I saw a spider web. And the Lord said, “Look what the devil has done to you. You were lukewarm because he has trapped you.” Then I saw myself on that screen.
+                
+                READ ALSO: Another Warning About Hell Fire By Ubani kingsley.
+                
+                My eyes are blindfolded. He said, “He has blindfolded you because you let Him do so. He has deceived you because you let Him. But you know my love for you never changed. I still love you like before.” Then I saw the blindfold being untied on my eyes and the spider fled.
+                
+                The Lord spoke again “Look, I am untying it. I am delivering you from all deception he has made. Don’t you know that I called you? Could you still remember the time when you have seen me many times? Why are you downcast? Don’t doubt anymore. All the things you have seen from the very beginning are real. I am the same today, yesterday and forever. I love you so much.”
+                
+                After hearing those, I wept. I didn’t utter any words; I was silenced in full awe. And I noticed my breathing isn’t as usual as here on earth. It was only twice every minute! Again a screen was flashed before my eyes. The Lord showed me my organs, intestines, stomach, lungs, heart, my ribs, bones and the like. The Lord spoke “Here in Hell, you will have a complete set of organs. You will hear, see, touch, taste and smell. And because there’s no source of good air here, you will hardly breathe.”
+                
+                lost soul in hell fire
+
+                
+                The Scriptures warn - “Do not fear those who kill the body but cannot kill the soul. But rather fear Him who is able to destroy BOTH SOUL AND BODY IN HELL.” (Matt 10:28)
+                
+               <br><br> I cried and pleaded Him to take me out of this place and here are His final words (which I can still recall) before leaving that Hell: “My daughter, I have called you. I have chosen you. Now, write all of this and share it to all people. Don’t fret nor be afraid of them, for I will uphold you. I will help you.
+                
+                I will strengthen you and anoint you. Just call unto me, I will answer. I will be with you until the end of age. You must always Pray, Worship and Read My Words. Wear the full armour so you can withstand all his schemes. I love you so much. And behold, I am coming soon. I am coming soon.”
+                
+                After hearing those words, I was awakened and I felt my spirit and soul was all worn-out. My breathing became unusual as if I ran a wide arena. I felt the tiredness in my soul. I immediately ran to the kitchen and drank a glass of water, after that I fell on my knees and worshipped Him. I wept and prayed, afterwards I had an unexplainable, unspeakable joy. I know the Lord loves me and He is with me.
+                
+                If you have read this and are Unbeliever, Lukewarm, Carnal and Backslidden Christian, please do kneel now! Confess all unrighteousness you have done. It doesn’t matter how small or how big it was. It doesn’t matter how long you have been backslidden, it doesn’t matter!! You know what matters the most? Your relationship with the Lord! Your own salvation. Your life after death. What if you die later or this day, where do think you are going? To Heaven? To Hell? You have to decide right now, as in NOW, not later, not tomorrow, not the other day.
+                
+                So please, accept Jesus as your Lord and Saviour. He didnt die for the perfect ones. He died for sinners like you and me! Come on just call upon His name and be saved. The Lord wants you to experience life abundantly. He did not made hell for you! He doesn’t want you to perish but have eternal life. Come to Jesus! He loves you so much!!
+                
+                — Matt 5:29 “If your right eye causes you to sin, pluck it out and cast it from you; for it is more profitable for you that one of your members perish, than for your whole body to be cast into Hell.”
+                
+                — Rev 21:8 “But the cowardly, unbelieving, abominable, murderers, sexually immoral, sorcerers, idolaters, and all liars shall have their part in the lake which burns with fire and brimstone, which is the second death.”
+                
+                — John 3:3,7 Jesus said to him, “Most assuredly, I say to you, unless one is born again, he cannot see the kingdom of God.” …”You Must be born again”
+                 .</p>
+            <p>More details...</p>
+            <p>Even more text to make the scroll appear...</p>
+            <p>Keep scrolling...</p>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal2')">X</button>
+            <h2>Divine Revelation Of Heaven And Hell By Iyah Melea</h2>
+            <img src="images/melea.png" alt="">
+            <p class="divine">
+
+
+                Divine Revelation Of Heaven And Hell By Iyah Melea
+                
+                My name is Melea, I’m 21 years old Melea and live in Quezon City, Philippines.
+                 I was raised a Christian, I knew my religion, but I didn’t know God. When I was a 
+                 teenager (13-16 years) I became a carnal Christian and I went to church but also 
+                 loved the world. Until one day, on March 2011 my mom brought me the testimony of 
+                 Angelica Zambrano (A girl who testified heaven and hell). After reading, I cried 
+                 repenting and confessing all of my sins. <br> <br>
+                 <img src="images/another.jpg" alt="" width="20%;" class="Melea">
+                
+                Iyah Melea
+                
+                Afterwards, I felt the Lord’s presence, and my body shook as If there was an earthquake, I was scared. Suddenly I began speaking in new tongues, I tried to stop my mouth but I kept uttering words. Then I heard an inward voice saying, “Open your mouth. Do not fear. It is I, my daughter.” Then it suddenly stopped.
+                
+                I was shocked and immediately ran to my mother and shared everything. She said, “It is the Lord, when He speaks again, listen to Him.” I went back to my bed thinking, “Does God really speak?” As I went to bed, I had peace, joy, love; I felt I was totally cleansed and forgiven. And for that I began seeking His presence and started reading His words. To make the long story short, I fell in love with Jesus. My journey with Him began.
+                
+                <br><br> <span style="color: blue; font-weight: bold;" >I SAW THE LORD</span> <br>
+                
+                He has revealed himself to me many times. May 2013 was when I got serious for God in my faith, when I saw Him descending on my room’s ceiling, He was wearing pure white robe, on His chest he had a gold sash, his golden hair touched his shoulders, He had gold sandals and on his face was just pure light.
+            
+                
+                He told me my calling, revealed secrets, I saw angels and much more, Jesus is truly alive. And if 
+                you think He doesn’t speak these days? You are totally wrong! He does speak, especially when we 
+                draw ourselves near to Him and seek Him with all our hearts.
+                
+                — Acts 2:17-18: “‘And it shall come to pass in the last days, says God, that I will pour out of
+                 My Spirit on all flesh; Your sons and your daughters shall prophesy, Your young men shall see
+                  visions, Your old men shall dream dreams. And on My menservants and on My maidservants
+                   I will pour out My Spirit in those days; And they shall prophesy.”
+                
+                VISITING HEAVEN
+                
+                In October 2014 the Lord took me to Heaven. At that time my sister was unwell after having a stoke and so I prayed earnestly for her and sought the Lord and worshipped with my guitar, singing songs in an unknown language. I felt the Lord’s fire on me. All of a sudden, my body began shaking as if there was an earthquake!
+                
+                Then I fell down, losing all my strength. I was unconscious, but my spiritual senses are totally 
+                active. Meanwhile, I can feel angels all around me. I can feel God’s presence as well. Thereafter,
+                 I was already in a vision, I saw myself being awakened by the Lord’s glorious light, I also have
+                  seen 8 angels who were with us.
+                  <img src="images/heave.jpg" alt="" class="heaven">
+                
+                 Iyah Melea went to heaven <br> <br>
+                
+                I felt unexplainable joy. Then he put his right hand on me and said with a still, loving voice “My daughter Melea (he called me by name!) My pure-hearted daughter. I am glad you made it here! I’ve been waiting for you, I have so many things to show you. Come! stand up!” then I got up and held his hand. I was greatly stunned by the heavenly scene. I felt joy, peace, love and full of awe.
+                
+                I will try my very best to describe this but these are too awesomely beautiful to describe properly. I noticed I was like a 12 year-old girl. I was wearing a pure white long dress. I watched in splendour while walking along the crystal clear river, as far as my eye could see, the Lord told me “My daughter, drink.” then I drank with my hands.
+                
+                crystal clear river in heaven
+                
+                It tastes so good! I’ve never drunk water as sweet and as soothing as this! I had a great joy and peace! Afterwards he said, “I know you love swimming. Come, submerge on the water!” I smiled and I submerged myself. While submersed on the water, I can see different kinds of sea creatures, fishes, turtles, and they were alive!
+                
+                Like they were talking and praising the Lord. I noticed also that I can talk and smile. 
+                I was waterproof! I had a great joy! After that, I noticed my clothes aren’t wet at all.
+                 Jesus smiled at me (I can’t see His face, but I know his lips moved every-time he smiled) 
+                 then he picked a rose that looks like diamond. <br> <br>
+                
+                READ ALSO: Divine Revelation Of Heaven And Hell By Ezekiel Moses.
+                
+                I couldn’t describe precisely. It’s shining in brilliance! I was shocked, 
+                it bowed unto Him! I was then so amazed! And he gave it to me. I held the rose
+                 and had an unexplainable joy!
+                
+                — Revelation 22: 1-3“And he showed me a pure river of water of life, clear as crystal, 
+                proceeding from the throne of God and of the Lamb. In the middle of its street, and on 
+                either side of the river,was the tree of life, which bore twelve fruits, each tree yielding
+                 its fruit every month. <br> The leaves of the tree were for the healing of the nations. And there
+                  shall be no more curse, but the throne of God and of the Lamb shall be in it, and His servants 
+                  shall serve Him.”
+                
+                As we walk and watch in splendour, I can see that this place is truly exhilarating! I can’t find
+                 words to describe this precisely! I don’t want to wake up anymore! I saw big 2 rainbows on a soft
+                  blue sky. There were radiant colours of all sorts, some unfamiliar to me. I saw upright trees, 
+                  which were greenish and were also unfamiliar to me. <br>
+                
+                I also noticed that we we’re walking on a golden path, there are gem stones and the like around.
+                 Such a magnificent scene! Afterwards we walked on grass so green, and then we got through a nice
+                  sculptured bench with a touch of gold. We sat there for a moment and start conversing, telling Him 
+                  this heavenly place is where I want to spend my forever with. We shared many other things that are 
+                  to be kept private. <br>
+                
+                the angels in heaven
+                
+                After that, Jesus introduced to me the 8 angels who were with us. He introduced them by their names! I just could not remember those because it was so unique. Something I did never heard before. I can’t remember their faces but I can tell that they were so beautiful.
+                
+                There were some of them who had no wings, some are tall, some had big two wings and some are holding a sword. Each time the Lord calls their name they gently bowed unto the Lord and smiled at me. I was honored and awed that very moment. Afterwards, we walked again and stopped.
+                
+                A HORRIFYING SIGHT <br> <br>
+                
+                Then Lord showed me something in just one swipe of His hand, I saw Hell. I saw the appalling condition of the lost souls, demons heartlessly tormenting people with sharp spears and sharp tools! I saw people burning in a pit in such horrible and dreadful way and another I saw people falling from the gates of Hell. They were thousands of them! I heard them scream in terror!!
+                
+                the lake of fire in hell
+                <img src="images/helll.jpg" alt="" width="30%;" class="hell">
+                
+                The Lord spoke “Can you see this my daughter?” I was terrified and said, 
+                “Yes Lord and I don’t want to see those anymore. I’ve known Hell enough.
+                 I’ve been reading the testimonies of your servants.” 
+                
+                He said with a sweet lovely voice “We will be going in here my daughter,
+                 don’t be frightened. I am here. I will go with you. I will never leave you.
+                 ” Upon hearing those, my physical heart started to ache. I breathed in an unusual way.
+                  It was so strange. I don’t know what’s happening! And I said “No Lord. I can’t. 
+                  I knew that place already. Please. I don’t want to go to that horrendous place” 
+                  I pleaded Him and cried.
+                
+                 
+                He sincerely said, “We must go in here my daughter, many people don’t believe that this place
+                 currently exists. I need you, my daughter, to testify. Have not I called you? Don’t be afraid.
+                  I will never leave you.” It was hard and painful to breathe that very moment! “But Lord, not 
+                  this time” I cried and cried.
+                
+                All of a sudden, He swiped back his hand and the vision of Hell was gone. He said, “Ok, my
+                 daughter, you are truly not ready. But you have to be ready. We will be going there as soon as
+                  possible! But don’t be afraid, I am here. I’ll go with you,” He said with a lovely still voice.
+                   Suddenly, all the pains on my heart vanished. Then I said, “But Lord, I don’t want to go there.
+                    That place is too dreadful. I don’t want to see demons, either the people who were burning in
+                     distress.”
+                
+                — Psalm 11: 4-6: “His eyelids test the sons of men. The Lord tests the righteous, But the wicked a
+                nd the one who loves violence His soul hates.  Upon the wicked He will rain coals; Fire and brimstone and a burning wind shall be the portion of their cup.”
+                
+                He lifted my face and said “My daughter I have not given you spirit of fear! I am with you always.
+                 I love you so much. I chose you. I called you. Do not fear.” After that, I had an unspeakable joy! 
+                 I laughed in the spirit.
+                
+                He continued “But you must always PRAY, WORSHIP, READ MY WORDS. You must always SEEK MY PRESENCE. 
+                The devil will do everything to hinder you. You must be VIGILANT. And don’t forget to WRITE all of 
+                these to Testify. Always remember, I am here. I am your faithful witness. I will never leave you. 
+                I will strengthen you. I love you so much my daughter. ”
+                
+                After hearing those, my physical eyes opened slowly. I realized everything, my life, my calling,
+                 and my family, relatives, the unbelievers and the people who were still blind to all this!! I am
+                  so burdened. My spiritual senses are now much more enhanced. ALL GLORY AND HONOR BELONGS TO HIM”
+                
+                — John 3:3,7: Jesus said to him, “Most assuredly, I say to you, unless one is born again, he cannot
+                 see the kingdom of God.” …”You Must be born again”
+                
+                —Heb 12:14-15: “Pursue peace with all people, and holiness, without which no one will see the Lord:
+                 looking carefully lest anyone fall short of the grace of God” To be continue In her second revelation tiled " 5 Minutes In Hell"</p>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal3')">X</button>
+            <h2>8 Hours in Heaven By Ricardo Cid</h2>
+            <img src="images/ricardo.png" alt="" class="ricardo">
+            <p>Please, church listen to what has happened to my life. In a dream, the Lord started dealing with me.
+                 I remember, in that dream, I walked out of my house. I walked on the streets in my neighborhood and
+                  I felt that someone lifted me up by my arms into the sky and I was running on the clouds and
+                   glorifying God.
+
+                A great brightness came over me and a voice said out of that brightness, “Ricardo, Ricardo, quit 
+                your job because I want to do something with your life and with my church on the earth.” After
+                 hearing these words, I trembled violently and woke up from my dream. I got up and I started 
+                 crying to God and asking, “What is this, Lord?”
+                
+                This voice came to me very strongly. It occurred to me for many days. Then I laid to sleep 
+                again and had the same dream and the Lord repeated the same message to me. After repeated times, 
+                I would wake up screaming because God's voice would increase in volume each time.
+                
+                As I would wake up trembling, I would scream and my parents would ask, “What's the matter?”
+                 I would tell them about the dreams and my mother prayed for me and told me, “If the Lord is 
+                 speaking to you, then He will give you understanding.” We continued praying all night long 
+                 until it was time for me to go to work that next morning.
+                
+                My mother told me then to get ready and leave for work. We asked the Lord for a sign to 
+                let us know whether or not it was He who was talking to me. I took a shower, got ready, 
+                and went to work. I used to work at “Chile Laboratories”. I really loved my job.
+                 I would get picked up at the bus station to go to work.
+                
+
+                When I got off of the bus, someone immediately told me, “What are you doing here? 
+                You aren't supposed to be in this place any longer.” In several occasions, others 
+                told me the same thing. The amazing thing is that they weren't born again. This is
+                 the sign that God gave me. After the sign, I decided to go to my boss to quit.
+                
+                I told him, “I must leave the company because God has commanded me to quit.” When the Lord 
+                commands, we MUST obey. My boss was concerned for me and asked, “What are you going to do? 
+                Where will you find another job as good as this one?” I told him that I had to obey God. So 
+                they had a large farewell reception of two thousand people for me.
+                
+                Afterwards, I gathered all of my things and went back home. As I arrived crying, my mother was 
+                already waiting for me at the front porch. I told her that I quit my job because the Lord confirmed my
+                 dreams through those people. She replied, “If the Lord spoke to you, then may He do with your 
+                 life as He pleases.”
+                 <img src="images/ricardo cid 2.jpg" alt="" class="ricar">
+                
+                ricardo cid
+                
+                She and I went in the house talked until nightfall. Then, I told her I need to go to bed because 
+                God will talk to me tonight in a dream. I thought he was going to speak to me in a dream, but it
+                 didn't happen as I thought. But, he was going to deal with me in a different way. When I went 
+                 into the bedroom and took off my clothes, the room started to shake.
+                
+                And I started shouting, “It's an earthquake that's hitting Santiago, Chile.” 
+                I tried to leave my bedroom, but someone invisible was stopping me from exiting 
+                through the door. I was able to see my mom and family across the room and I cried 
+                for help but no one could hear me. Now I know, this invisible being was the angel 
+                of the Lord.
+                
+                I stepped back and laid on my bed and cried out to God, begging for Him to tell me 
+                what's going on. Then an audible voice spoke to me. The Holy Spirit began to speak 
+                to me in a most beautiful voice, saying, “Ricardo, now that you have left your job, 
+                I want you to go to the church and pray seven hours a day every day for your life, 
+                and for my church on the earth.” After the Lord stopped speaking, the room stopped shaking.
+                
+               
+                
+                I then stretched my hand through my doorway and found that I could leave the room again. 
+                Then I ran to my mother and shouted “I heard the voice of the Holy Spirit” and then left 
+                my home and started shouting that outside. Some people don't believe that God still talks
+                 to people today but I tell you it's true, He does speak to people!
+                
+                If the Lord could speak to Abraham, he can still talk to us, his church today! I went
+                 to the church and talked with the Bishop and we agreed to open the church at 8am every
+                  morning so that I could pray and obey God's command. Every morning, I would go to church
+                   and pray one hour, two, and by the third, I wouldn't have anything else to pray for and 
+                   I'd ask God, “Lord, what else can I pray? I have four hours left!”
+                
+                Then, I heard an underground rumbling starting from the back door of the church. I then felt 
+                the church swaying from left to right like a drunk person. During this sway, the Lord spoke 
+                \to me audibly but not in the same voice as in the dream before. The voice He spoke to me
+                 before was with authority, this time, He spoke in a voice of sorrow.
+                
+                He said, “Ricardo, Ricardo pray for my church! My church isn't the same anymore!! 
+                My church on the earth has changed. My church has lost it's faith. My church doesn't 
+                believe in me or my existence! Tell my church that I exist!! Intercede for my church,
+                 because my church doesn't pray or fast anymore!” The shaking stopped after He finished 
+                 speaking. I then started interceding and walking up and down the church for the remaining
+                  four hours begging for the people of God to revive.
+                
+                On Thursday of the second week in intercession, I woke up with intense pain in my bones 
+                and joints and didn't want to get up. My mother was waking me up to go to the church to pray,
+                 but I complained that my body and bones were in pain. She then recommended that I pray at home
+                  instead.
+                
+                However, I reminded her that God specifically told me to go to the church to pray. So,
+                 she helped me get dressed and took me to church. That morning, there were many people 
+                 praying at the church and I asked for prayer because of the pain in my body. I told them I 
+                 was too weak to pray.
+                
+                So they anointed me and prayed for my body and I received supernatural strength from God!! 
+                Hallelujah! I started praying and pacing back and forth, asking for God's mercy on the nation
+                 of Chile and for families and drug abused people and for the church.
+                
+                I finished the intercession and then came later that night for a church service. After the
+                 bishop's benediction, I lifted up my hands and felt someone pass by and touch my back. When this happened, I lost all strength and fell to the floor. The bishop asked what was wrong with me and I responded I don't know, I have no strength and I can hardly talk.
+                <img src="images/angel decending.jpg" alt="" class="angel">
+                angel descending
+                
+                Then the church surrounded me and began to pray in tongues and shout. Then some of the
+                 congregation could see the angel that was coming in and asking me to leave my body. 
+                 The bishop declared, “You will not leave your body!”. As he said this, the angel 
+                 stopped motioning for me to leave my body.
+                
+                You see, any person who has authority in Jesus will be honored by the angel of the Lord.
+                
+                The bishop then asked me, “How long does the angel want to take you from your body?” 
+                I then asked the angel, "Are you taking me for one hour? Two? Three hours?” The angel 
+                replied, “No, you will be gone for 8 hours to see Jesus in the third heaven because
+                 He wants to talk to you.”
+                
+                Then, the angel told me, “I am not the one who will escort you to heaven, because 
+                I am your guardian angel who has protected you every day you have lived on this earth. 
+                Two angels will come from heaven to take you to the third heaven at the midnight hour.”
+                 I told this to the bishop and he determined to take me in another brother's car to a pastor's 
+                 home on a second floor.  As I laid in a room, we were able to hear dog's barking and people screaming.
+                
+                After my experience, I was told that two men in bright white shining robes appeared in the 
+                middle of the street and walked into the first floor of the building and came up to the second 
+                floor where I was staying. These angels were beautiful. They had brilliant white hair, whiter than snow and eyes that were fashioned like pearls.
+                
+                the angel of God
+                <img src="images/angel (1).JPG" alt="" class="michael">
+                
+                Their skin was as soft as a baby's yet their bodies were muscular like a bodybuilder.
+                 These angels are powerful!! I then told the bishop, these angels are here that were sent 
+                 to take me to heaven. One of the angels started motioning me to leave my body. As this happened, 
+                 my bones started hurting again.
+                
+                So, the brothers in Christ next to me started massaging my body and telling me that it was getting
+                 ice cold. Next, they went to get portable heaters to heat my body up again. As the angels were
+                  calling me to leave my body, I started to get desperate and moving from one side to the other.
+                   I started feeling death take over my body and I shouted to my brothers in Christ, “Don't bury me,
+                   
+                   I will be back!”
+                
+                I left my body, and then I jumped on my bed. I saw my brothers in Christ touching my body and saying,
+                 “He's gone, he left his body!” But I was right there next to them telling them, “I am here!” However,
+                  they couldn't see my soul because it was an incorruptible spirit body. My brothers started wrapping
+                   my body in a blanket.
+                
+                One of the angels told me, “It's time to go, because the Lord is waiting for you!” Each angel took 
+                me by an arm and lifted me up to the heavens and I crossed through the atmosphere at lightning speed. 
+                I will tell you this, even if you don't believe any of this, my Jesus Christ exists and lives forever!!
+                
+                <br><br>
+                
+                Later, When the Lord told me to go back to my body, I told him, “Who on earth will believe me, 
+                 me stay with you!! No one will believe this revelation, no one will believe this because they 
+                 don't have faith! The lack of faith on the earth is huge, who will believe this experience?” 
+                 The Lord replied, “Someone will believe your story, only those who belong to my true church 
+                 will believe you.”
+                
+                As I left my body that night and I was flying at an incredible rate of speed on my way to
+                 visit the Lord. I was able to look down and see the planet earth. Then I passed right next 
+                 to the moon, this glorious moon that brightens the night sky on the earth. Then, I was able 
+                 to see the giant sun with my own eyes; I was able to see the flames that explode from the sun
+                  and warm the earth.
+                  <img src="images/galaxy.jpg" alt="" class="galaxy">
+                  <br><br>
+                
+                the galaxy
+                
+                Then we continued on and I saw many stars as I passed by them. God allowed me to see the sun,
+                 moon, and stars for a purpose: that purpose is to tell all of you that our God is a huge creator
+                  of the universe!!! He's not small by any means! We continued traveling at a great rate of speed
+                   until we reached a place where there were no more stars.
+                
+                No more creation, just darkness. I could look down and see all of the stars below me. I started 
+                feeling afraid and asking the angels, “Where are you taking me? Please take me back to my body on 
+                the earth!” They then squeezed me tight and wrapped one of each of their legs around mine and held me.
+                
+                I then started bending over in somewhat of a fetal position because of the fear I felt. The angels
+                 said “Be quiet! We are taking you to the third heaven where Jesus is waiting to talk with you!” 
+                 The angels stopped and during this moment I was looking in all directions but couldn't see anything created, I don't know where I was, but I think it was the second heaven.
+                
+               <br><br> THE THIRD HEAVEN
+               <img src="images/third heaven.PNG" alt="" ">
+                I then was bracing myself in the fetal position while the angels were holding me and suddenly
+                 felt and heard the terrible noise of a stampede above me. The angels squeezed me and said,
+                  “Ricardo, don't fear, Jesus is with us!” As they were speaking, they also said, 
+                  “Turn up your head and look above you!”
+                
+                I then was surprised by what I was looking at because there was some kind of motion by 
+                creatures above us. One of the angels said, “Look, we will show you what you are looking 
+                at above us!” And one of the angels motioned with his hand from one side to the other and
+                 illuminated the entire sky above us to see what was there.
+                
+                As the sky was illuminated there was nothing but demons and devils surrounding the entire sky.
+                 The LORD REBUKE THEM ALL in JESUS' NAME!! The bible is true!! Everything that's going on in this
+                  earth is what you see in Revelation. Jesus is coming soon!! How can I convince you of this,
+                   it's so SOON!!
+                
+                I asked the angel, “What is this place?” One of them responded, “This is the celestial realm of 
+                darkness where Satan and his demons inhabit.” I started saying, “That's why there's so much evil
+                 on the earth! These demons come to the earth from this realm and cause all forms of destruction 
+                 and wickedness on the race of men. The earth is full of demons!” There are millions upon millions,
+                  the number is uncountable.
+                
+                Then the angels started motioning for me to look more closely and they showed me the faces of
+                 these creatures and that many of these horrible beings are already shown to us on television.
+                  These beings were MONSTROUS!! I saw the Thunder cats and Power Rangers and caricatures from 
+                  animations and horror movies in real life.
+                  <img src="images/power_rangers.jpg" alt="" class="power">
+                
+                Thunder cats and Power Rangers 
+                
+              <br><br>  All of the creators of these movies and animations have formed a pact with the devil to produce these things for television and cinema!! All of those drawings come from that spiritual realm that I experienced. Why do you think that nowadays children are so rebellious?? It's because those demons enter into your children as they view these shows that depict them.
+                
+                READ ALSO: Experience Of Heaven And Hell By Angelica Zambrano.
+                
+                That's why we need to learn to teach our kids how to discern what to watch on TV. The angel told me that this is all a reality and truth. All these demons exist and people are making pacts with the devil to bring these demons to the earth. These demons started to curse me, and the church, and the Father, and the Lord Jesus and the earth because they don't respect God or any his creation.
+                
+                Then, I saw in the flesh a goblin named Hugo, who is a popular cartoon caricature in Chile. He was horrifying to look at. He came near me and told me, “We will go to the earth and kill all the children!” Why do you think that children are killing children? It's because some of them said that something came out of the television and told me to do this or that.
+                
+                These demons are planting hatred on the earth, May the Lord deliver and cleanse Chile!! One of the angels told me “Continue to look!” And the demons said, “We've tried to destroy the church, but we can't because when we kill one, then thousands rise up to replace that death!” Since the beginning of the church, Satan has tried to destroy it, the church that preaches the true Gospel and does the work of God, but he can't because the Lord Jesus protects us! Glory to God!
+                
+                Then the demons said, “Let's do something new, let's go inside churches, because there are many in the churches that belong to us! We are going to use these people to spread gossip and division amongst the brethren in church. We will cause churches to fall by gossip and the Holy Spirit will be grieved and leave the church.”
+                
+                The devil goes everywhere looking to destroy those who love the justice of God. Just like in this scripture verse: 1 Peter 5:8 Be sober, be vigilant; because your adversary the devil, as a roaring lion, walks about, seeking whom he may devour. I didn't want to see anymore, but the angel told me to continue to look at the events occurring.
+                
+              <br><br>  host of warrior angels
+                
+                I saw the demons fleeing everywhere as a single bright shining star was coming. As this star was approaching, it was bringing much praise and worship to the Lord. This star wasn't a star, it was millions of angels riding on white horses praising the Lord of Hosts!! They were shouting “Holy, Holy, Holy, is the One who lives from age to age! The Lord is the Alpha and the Omega, the beginning and the end and let all that has breath praise the Lord!”
+                
+                And then I saw a great battle and could not find the demons anymore. "Don't fear anymore because there are more angels with us then those on the enemy's side!" The angels made a way to the third heaven. They divided into two groups one to the right and one to the left. It was an open way to the third heaven!
+                
+                This way reaches heaven and you could see the celestial city of God.  I was able to see this path of glorious and marvelous angels. They had cleared the entire region from demons and they never stopped praising God and blessing His name! The angels placed me in front of them and told me, “You must wait here!”
+                
+                Then in the distance, I looked and from the celestial city, I saw a personage in white robes riding a white horse. As the being was getting closer to me, the angels would not cease praising God's name and exalting Him. This person came to about the distance of about 4 meters from me. This being was beautiful, even more beautiful than the other angels.
+                
+                I expected him to speak to me, but what he did was look at me for a little while and shout, “I am! I am Michael the archangel who is in charge of guarding you and the church on the earth!” I met the archangel Michael face to face and he was a precious being! He turned to his side and pointed a way for me to enter the celestial city.
+                
+                 Michael the archangel
+                
+                He said, “Enter! The Lord Jesus is waiting for you! “ I was walking on the path to the city and as I was walking, the angels were shouting and praising the Lord. I cried and cried as I was looking at the city. The city was made of pure transparent gold and the doors to the entrance were made of pearl.
+                
+                The floors were crystal in appearance. I had never seen anything like this on the earth and neither could a human being create it. The architect was our Lord and God of the universe. I was outside the city and the entrance doors were wide open. And those doors are still open. I was able to see inside and on the walls were rubies and sapphires and pearls that were brilliant.
+                <br><br>
+                angels praising God
+                
+                And from within the city there were millions upon millions of voices praising God! I trembled from outside the city hearing this. I heard a single voice which shook the heavens and behind this voice shouted millions and millions of praises to God saying “Holy, Holy, Holy is the lamb of God and the Father to whom belongs the glory and the honor forever and ever AMEN!”
+                
+                This great voice shouted “BE HOLY, FOR I AM HOLY! ONLY THE HOLY ONES WILL ENTER THIS PLACE! FOR WITHOUT HOLINESS NO ONE WILL SEE THE LORD.” Without holiness, no one will see him.
+                
+                A voice said, “Enter,” and I entered the city. And I saw a marvelous throne flowing with fire. And as the fire is coming out of the throne, I paid attention and I saw Jesus, the King of Kings and Lord of Lords! I fell prostrate before Him on the ground without any strength. His hand came out of the flame extended to me and he said, “Get on your feet!”
+                
+                I gained strength and stood up. I immediately started touching his feet and arms and body. When I saw his face, his appearance is nothing like how artists on the earth produce in their paintings! Many people make gods of wood and many other images! But I want to tell you brothers, that Jesus didn't look like those images. He was a very muscular God! He's not a mediocre God, He's all powerful!!
+                
+                Jesus on his throne
+                
+                He said, “I am not a God made of chalk or wood, I am a living God who exists!” He continued, “Tell my church on the earth that I am real!! I truly live and exist! Tell my people that heaven is real and I am waiting for them!” He told me, “Come, walk with me and I will show you something great.”
+                
+                We looked down from the ground and could see the earth and all that was done upon the earth. Jesus said, “I am able to see everything that my church does!” He knows everything that we do and I was able to see many of you from heaven. Jesus told me, “Look at my church!” and I saw brothers against brothers, and churches against other churches.
+                
+                Jesus then told me, “My church has lost their faith, they don't want to believe in me, wickedness has multiplied on the earth and people don't want to believe that I exist. Tell my people I am going to do something great on the earth! My church is backsliding instead of growing."
+                
+                The Lord started to cry over His church and He said, “This church is not my church!” I said, “Lord, don't talk that way! Of course we are your church.” Then the Lord replied, “No, my church walks in miraculous power and signs and wonders! My church has decreased! However, tell them, I will be back to raise them again!”
+                
+                
+                
+                He told me to continue to walk with Him and we went through a door and the ground was made of pure gold. I started running up and down the gold street and picking up gold dust and sprinkling it on my body. And then the Lord told me to come back and he told me that there are streets of gold in heaven.
+                
+                “All this belongs to my people,” the Lord said. “But, in my church there are many thieves who steal my tithes and offerings! Tell my people that no thief will enter my kingdom in heaven!”
+                
+                We need to straighten up our lives for the Lord. Then we saw a very long table for millions of people with plenty of food and refreshments. There were also many crowns and crystal goblets for people to drink from. The Lord said, “Ricardo all of this has been prepared for my people!” This was the table prepared for the wedding of the Lamb.
+                
+                There is another sister in Christ who was also taken to heaven and she also saw angels going back and forth preparing the wedding supper also! I told the Lord, “Why did this sister see angels preparing things here, but I don't see any preparations being done?” The Lord replied, “That is because all the preparations are complete!”
+                
+                There are crowns for all those who work and are obedient to the Lord. I then said, “Lord when are you coming back then, if all preparations are complete? How much longer till you return? Show me the clock, how much time is left in the heavenly clock?” Many other people have had dreams of a clock, showing almost midnight when the Lord is supposed to return. I asked, “Lord when will the clock strike midnight? Is it one minute left? five minutes?”
+                
+                Jesus studied my face for a moment, then He replied, “Ricardo, in heaven there is no more clock!” I then responded, “Well Lord, if there is no more time, why haven't you returned yet?” Jesus lifts his hands and takes his thumb and forefinger showing the sign for something very small and said, “All the time that is left is simply the Father's grace for those who have backslidden to offer them a chance to repent and do the first works.”
+                
+              <br><br>
+                
+                And the Lord of Hosts hasn't returned because he has given us all a tiny space to repent and that time is called “A time of the Father's grace.” Jesus is coming at any moment, we must begin to seek Him with all our hearts and fast and pray and do the first works of old. I am almost finished. Jesus repeated, “We are on the time of God's grace!”
+                
+                Then an angel appeared to our right and shouted, “The time has come!! Time is finished. Every preparation is complete! Jesus is receiving His bride!” The Lord is coming and all the signs of the scriptures are fulfilled! The movies are showing that something catastrophic is coming. The scientists know that something great will happen, they just don't understand what it is!
+                
+                However, we the church know that Jesus is coming soon! When the angel finished shouting, then all of the millions of angels started jumping and rejoicing that the bride is finally returning to heaven. I kept asking, “What is going on?” but no one paid attention to me, they were all rejoicing in the good news.
+                
+                So, I joined the angels and started exalting Jesus' name also! At that moment, when I lifted my arms I felt someone lift me out of heaven and send me down at a tremendous rate of speed. Right now, the angels are all rejoicing that the bride is returning. I came back to the earth and was dropped at the pulpit in the church where I would pray every day. Time is so short!!
+                
+                If you don't want to believe me, then don't believe.. But He's coming and it will be for eternity. The people of God don't want to believe in the rapture. Please awake, for God's sake awaken to the truth (Ricardo is crying).
+                
+                The Lord was here next to me and He told me, “Ricardo, this is what the rapture would look like if it happened right now!” I was then able to see the whole earth and the precious, beautiful Holy Spirit, the one who gives us peace and joy leave this earth. I then saw a vapor enter the church and surrounded me and I asked the Lord, “What's this?”
+                
+                the scene of rapture
+                
+                He said, “This is what I call the Rapture.” I then saw people breaking down the church doors, wanting to come in, and shouting, “Where are my children? They are all gone!” All children of the earth were gone because God will not leave any behind. The first one to enter the church was the choir director, shouting, “Where's the church! I am left behind! I stayed! I stayed!”
+                
+                the rapture man
+                
+                After the choir director, I saw other pastors and brothers and sisters and the overseer of the church all crying, “I was left behind!” Many parents and spouses were looking for their loved ones and the people in the church responded, “Your loved ones aren't here! The Lord took them.” Then these people would cry, “Then it was all true, Jesus came and took His bride!”
+                
+                READ ALSO: A Peculiar Vision Of Rapture Of What Is Going To Happen Soon.
+                
+                People were weeping and lamenting wishing that they had believed in Jesus the Christ. Everyone who doesn't believe in Jesus as the Messiah is lost! I saw many people and pastors crying and the people started demanding the pastors, “Why didn't you preach the truth, why didn't you teach holiness and warn me about all of this? It is all your fault that I was left behind!”
+                
+                THE LEFT BEHIND AFTER RAPTURE <br><br>
+                
+                Many will stay behind because they are not living holy lives. We need to preach true holiness and teach people to truly repent! I saw how people would beat the pastors and tear them to shreds and pull out their hair. The pastors would cry and beg the people not to harm them. The people would not stop because they were now demonized.
+                
+                There are entire churches that will be left behind. I saw a brother that was trying to rip his own eyes out because of the sorrow. And people would hit their heads against floors and walls because they couldn't understand that Jesus was the only answer. Because people wanted to continue in sin and wickedness and live life the way they wanted to.
+                
+                People would cut themselves and bang their heads until you could see their skulls crack and they would fall to the ground. I the blood flow freely in the church from people who were injuring themselves. Then I saw a youth crying out to God, “Please Lord, take me!” It was too late. Jesus had already come and received His church. I fell to the ground because I saw many more terrible things.
+                
+                Jesus said to me, “In the great tribulation, there will be troubles like never before.” I then asked, “Why are people jumping back up after hurting themselves so badly?” The Lord Jesus replied, “Because at this time, people will long for death, but will not find it. Death will have fled from the earth"
+                
+                I asked the Lord, “Why did all these pastors and people stay behind?” And the Lord said, “Because I know them. I know their hearts.” God knows us.. He knows all of our hearts. I collapsed to the ground, almost fainted. Jesus said, “I wanted to show you this so that you could warn my church and give them hope. Tell them that if people will repent now, I will forgive them while there is still time. I will do a great thing in the earth.”
+                
+                Please, open your eyes. The evangelical church in Chile is growing. “Tell my people that if they ask for forgiveness, I will pardon.” I then saw another vision and I saw a fire that covered the entire heavens. Jesus asked, “Did you see it? That fire that you see over the earth, is a fire over the country of Chile. Because Chile will be for Christ! God will change Chile!”
+                
+                I then saw the fire move and want to come upon Chile and Jesus said, “My Father's eyes are upon Chile.” When the fire fell upon Chile, other countries will see it and notice that God is moving there. The church all over the earth rejoiced because of the move of God in Chile. The Lord took me in the vision to a place called “Paseo Humada” and showed me people that were maimed and crippled.
+                
+                Then I saw true believers praying over cripples without legs and commanding the limbs to grow. The limbs would obey and grow before their eyes. People without arms would have instantaneous creation of new limbs. During this time, the Lord will show creative miracles.
+                
+                In the churches people will be healed. In this day, the dead will be raised and God will use you in Chile to perform the same miracles that the apostles of old performed in the bible. The Lord says, “I am sending this message to my people on the earth, because I exist in the heavenly realms.” Revelations 4:1 After this I looked, and, behold, a door was opened in heaven: and the first voice which I heard was as it were of a trumpet talking with me; which said, Come up hither, and I will shew thee things which must be hereafter.
+                
+                Revelations 5:11 And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands; Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honor, and glory, and blessing. That is the entire revelation that God gave me (Ricardo Cid).  He is coming soon. Maranatha! Amen!
+                
+                </p>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal4')">X</button>
+            <h2>Divine Revelation Of Hell By Bill Wiese-23 Minutes In Hell</h2>
+            <img src="images/bill_wiese_test-400x400.jpg" alt="" class="bill">
+            <p>Bill Wiese saw the searing flames of hell, felt total isolation, and experienced the putrid and rotting stench, deafening screams of agony, terrorizing demons, and finally, the strong hand of God lifting him out of the pit. "Tell them I am coming very, very soon!"
+
+                Wiese's visit to the devil's lair lasted just twenty-three minutes, but he returned with vivid details etched in his memory. Since this life-changing ordeal, he has spent the last seven years studying the Scriptures to find answers and has listed more than 150 Bible verses referencing hell.Everyone is curious about the after life, and now Wiese shares his insights to commonly asked questions such as:Is hell a literal burning place?
+                 Where is hell?
+                 Do you have a body in hell?
+                 Are there Degrees of punishment in hell?
+                 Are there children in hell?
+                 Can Demons torment people in hell?
+                 Can "good" people go to hell?
+                "Even if you don't believe my story, I hope you will believe the Scriptures and avoid hell just the same." You're going to hear the vision of Hell, but even more important, you're going to hear a vision of intimacy with Jesus Christ and the love He has for this whole world.  Bill was in Hell.  He wasn't a casual observer, as so many people have been in legitimate visions, but He experienced the torments of Hell for about a half an hour with absolutely no hope of ever escaping.  Bill and his wife are deeply devoted to Jesus Christ, and to the work of God, and to the leadership of the Holy Spirit.  You're going to like him also.  Please welcome Bill and Annette Wiese.
+                
+                READ ALSO: Divine Revelation of Hell By Mary K Baxter.
+                
+                (Bill Wiese speaking)
+                It is an honor to be here. We don't do this for a living and neither for money. We just know that God has told us to go and tell the world about his love for people and the place He doesn't want any of His creation to go to.  So that's why we're here. So, for the sake of time, I'm going to shorten this testimony and just get right into it.
+                
+                But first I want to address a couple things, questions that might be in your mind.  The first question that would be in mine, if I was listening to me, would be, "How do you know it wasn't just a dream that you had?  A Bad dream?"  A couple points to make, first of all, I had left my body.  I saw my body when I returned, lying on the floor.  So I know for sure it was an out of body experience.  Some Christians have said, "Oh a Christian can't leave his body."  But that's not true, In 2 Corinthians 12:2, when Paul was caught up into the third heaven, He said, "whether in the body, or out of the body I do not know."  So if he didn't know that must mean it's possible.  And also he said in verse 1 that it was a vision, so I believe this comes under the classification of a vision.
+                
+                In Job 7:14 it says, "thou scarest me with dreams and terrifieth me with visions."  So this is definitely what the Lord did, terrified me through a vision.  Also in returning from this, it took me a year to calm down, and become like a normal person again.  I was so upset and traumatized from the fear that it's changed my whole viewpoint on how to witness and how much to appreciate what God saved us from. I asked my wife to come up for a minute so that she could just share with you what happened when she found me in the living room, because I don't remember that part.  So I want her to say a few words.  Thank you.
+                
+                Bill Wiese Wife
+                
+                (Bill's Wife Annette Speaking)
+                It was about 3:23 in the morning when I woke up. I just remember that because I looked at our digital clock, and I noticed Bill was not next to me, and I heard screaming coming from our living room.  I proceeded to go down the hallway.  I found my husband in a way I'd never seen him before.  If anyone gets to know Bill, he's very conservative by nature, very calm, and a professional man.  He's just not the type to get excited or get real emotional over anything, unless it's God at times.  But, anyway, I saw him there traumatized, literally traumatized holding his skull, holding his head between his hands and crying out and screaming.
+                
+                He was in a fetal position on our living room floor.  I didn't know what to do. I thought he was having a heart attack.  I just started to pray and he cried out and said, "Pray that the Lord would take this out of my mind!  The Lord took me to Hell.  I feel like my body is dying, I can't handle this."  So I proceeded to pray over him, and in about ten to twenty minutes he began to calm down.  He was literally in a traumatized state, like someone who went to Vietnam and has a re-occurrence, or a horrible car accident where they're reliving it.  It was not just someone who had a bad dream and woke up. So I just wanted to testify to that.
+                
+                (Bill Wiese speaking)
+                I'm so blessed with a good women.  I'm really grateful to God.  I've been married for four years, and have known her for six, and it's been the best six years of my life, I have to say, so praise God.
+                
+                I wanted to find out when got back from this experience, if there's any body in the Bible who has ever experienced Hell.  So I began research.  I listen to Chuck Missler a lot. He's a Bible teacher across the nation, a real scholar and he had said that Jonah had experienced Hell.  In Jonah 2:2 it says, "in Hell he cried out."  And In Jonah 2:6 it says, "the earth with her bars was about me forever, yet thou has brought up my life from corruption."  So at least there was somebody in the Bible that experienced Hell-Jonah.
+                
+                I also wanted to find out, because I was raised in the early days of Calvary Chapel, that any spiritual experience that you would go through should already be in the Word of God.  So I knew that if what I experienced was true, it would already be there in the words.  So I began to research and I found over 400 scriptures that depicted everything I saw, heard, felt, everything to do with Hell.  It's already in the Bible, so whatever I'm telling you it's already there.
+                
+                I'll make reference to some of the scriptures as we go.  I can't quote all 400, but I will for some of them.  I also found out there were about 14 other people that had experienced some portion of Hell.  Most of them were near death experiences, people in the hospital dying and were brought back. So to get right into it, quickly: My wife and I were at the Sunday night prayer meeting that we always attend with our pastors.
+                
+                And we went home like any other normal night and went to bed.  About 3:00 o'clock in the morning I was taken.  I did not know how I got there until I returned. Then the Lord explained. But I was just dropped into a prison cell, just like a regular prison cell, like you imagine, with rough huge stone walls and bars on the door. I didn't know where I was yet. All I knew was that it was extremely hot, terribly hot.  It was so hot, I couldn't believe, that I was alive. I felt like I should have disintegrated with this heat, but I was still alive.  It was light in the room for a little while, and I believe the Lord's presence was there for me to see the scenery better, but then it got dark after about a minute.
+                
+                great multitude fallen to hell <br> <br>
+                
+                In Isaiah 24:22 it says: "And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison" Proverbs 7:27 "they shall go down to Hell in the chambers of death"
+                By "Chambers" it means rooms.  So part of Hell has prisons cells, chambers, pits of fire, and big areas of fire, so I was just in a prison cell at this time. Also in Jonah 2:6, "the earth with her bars was about me for ever...." And Job 17:16 "They shall go down to the bars of the pit..."
+                So again, everything I saw was in The Word.  Stones are talked about in Isaiah 14:19.
+                
+                I found myself in the cell, and these 4 creatures were in the cell with me. I didn't know they were demons at the time, because I went there as an unsaved person.  God took it out of my mind that I was a Christian.  I didn't understand why, but He explained it to me on the way back.  These creatures, I didn't realize that they were demons, but they were enormous.  They were about 12 or 13 feet tall, one you will see in the video.  One of the people that gives their testimony, he saw the same demon that I did.  So you will see what one actually looks like.  There is a really good picture of it in the video where one guy was drug up to the bars of Hell.  It's Kenneth Hagan's testimony.
+                
+                Anyway, it was all scaly.  This one had scales all over its body, giant jaws with huge teeth, and claws sticking out, along with sunken-in eyes.  They were just enormous.  And the other one didn't looked like this at all, but it had razor sharp fins all over with one long arm and out of proportion feet.  Everything was deformed and twisted and out of proportion, out of symmetry, no symmetry, one arm longer and one shorter and just odd looking creatures, horrible, horrible looking things.
+                
+                And they were blaspheming God. The whole time they were cursing God. I wondered, "Why are they cursing God? Why are they hating God so much?"  And then they turned their attention to me, and I felt the same hatred they had for God, they had for me also, and again I thought: "Why do they hate me?  I haven't done anything to them."  But they hated me with a hatred that I have never experienced on earth; way beyond what man has the ability to hate with.  They absolutely hated me, and I knew they were assigned to torture me.
+                
+                There were things that I am going to say, that I don't know how I knew. In Hell your senses are keener, you are just aware of more than our physical bodies are. I was aware of distances, I was aware of time, and so forth, much more than you are here.  I knew these things were assigned to me, to torture me forever in this place.
+                
+                I was lying on the floor in this cell and I had absolutely no strength in my body.  I wondered, "Why can I hardly move, what is wrong with me?"  I was just aware of no strength, and I was helplessly lying there.  One Demon just grabbed me and picked me up, and threw me into the wall like a glass.  He just picked me up like a glass. That was how light I was, or how strong he was.  And threw me into the wall, and every bone in my body just broke.  And I felt pain!  I just began to lie on the floor there, crying out for mercy, but these creatures don't have any mercy at all, absolutely no mercy. 
+                
+                The one picked me up, and the other one, with his razor-sharp claws; he just shredded my flesh right off.  He just tore it off, and had absolutely no care what so ever for this body that God so wonderfully made.  It had a hatred that was so intense against me.  I wondered, "Why am I alive, why am I living through this?  I don't understand why am I not dead."  My flesh just hung there in ribbons.  And there was no blood, just flesh hanging, because life is in the blood, and there is no life in Hell.  And there is no water in Hell.
+                
+                <br>In Isaiah 14:9-10 it says "Hell from beneath is moved for thee to meet thee at thy coming: it stirreth up the dead for thee, even all the chief ones of the earth; it hath raised up from their thrones all the kings of the nations.  All they shall speak and say unto thee, Art thou also become weak as we?  Art thou become like unto us?
+                
+                Psalms 88:4 "I am counted with those who go down to the pit; I am like a man who has no strength, And we know that the devil does have strength, in the scriptures were there was a demon-man running through the graveyard, it says: Mark 5:1-4 "Then they came to the other side of the sea, to the country of the Gadarenes.  And when He had come out of the boat, immediately there met Him out of the tombs a man with an unclean spirit, who had his dwelling among the tombs; and no one could bind him, not even with chains, because he had often been bound with shackles and chains.  And the chains had been pulled apart by him, and the shackles broken in pieces; neither could anyone tame him".
+                
+                They couldn't bind him; he had broken the chains into pieces.  And that was just a man with a demonic strength.  I understood these demons had about 1000 times the strength of a man.  So even if I had my natural strength, I could not have fought them off anyway.  So I was absolutely at their mercy, which they don't have any mercy. The Demons ruin your soul in Hell.
+                
+                The smell of these demons and the smell in Hell were so atrocious; I can't even describe it to you.  There was a smell of burning flesh, of sulfur.   The smell of these demons was like an open sewer, putrid, rotten meat, bad eggs, sour milk and everything you can imagine.  Take it in, times 1000, and put it up to your nose.   And you just breathe it in.  It was so toxic, that it would kill you, if you were here in this body, you would die.  And I wondered, "Why am I living through this smell, it is so horrendous?"  But again you don't die, you have to endure it.
+                
+                The profanities, that they were cursing at God is mentioned in Ezekiel 22-26 "I am profaned among them"  Her priests have violated My law and profaned My holy things; they have not distinguished between the holy and unholy, nor have they made known the difference between the unclean and the clean; and they have hidden their eyes from My Sabbaths, so that I am profaned among them. 
+                
+                Profaning, degraded vulgar language and blasphemies.  <br> br The torment they were doing on me was mentioned in Deuteronomy 32:22-24 "For a fire is kindled in My anger, And shall burn to the lowest Hell; It shall consume the earth with her increase,  And set on fire the foundations of the mountains.  ‘I will heap disasters on them; I will spend My arrows on them.  They shall be wasted with hunger, Devoured by pestilence and bitter destruction;  I will also send against them the teeth of beasts, With the poison of serpents of the dust.
+                
+                So there are teeth of beasts upon you. 2 Samuel 22:6 states: "The sorrows of Hell compassed me about; the snares of death prevented me; And in Micah 3:2 there is an interesting scripture where the Philistines, who hate the Israelites says: "You who hate good and love evil; Who strip the skin from My people, And the flesh from their bones;
+                
+                That was what they did to the Jewish people. That was in the natural, but where did they get that idea from?  That comes from Hell. That is what the Demons do, and the mercy?  There is only mercy in Heaven. Mercy comes from God, and the devil has no knowledge of any kind of mercy, he is totally against that.  Psalms 36:5 "Your mercy, O LORD, is in the heavens; Your faithfulness reaches to the clouds" It is defiantly not in Hell.  And in Psalms 74:20 it says: "Have respect to the covenant; For the dark places of the earth are full of the haunts of cruelty. It is just a cruel, miserable, horrible place that you have to endure.  You have to endure all these things.
+                
+                God has made mankind the highest form of creation, and these demons are the lowest form of creation.   As men we work hard to get ahead in life, we better ourselves, we study.  But in Hell, your life is run by demons.  These creatures have a zero IQ, absolute ignorant creatures.  All they know is hatred for God, hatred for you and torture.  And they run your life, and you can't do anything about it.
+                
+                There are scriptures about the humiliation you have to endure.  "This thing is going to run my life, I can't stop it!"  In Isaiah 5:14-15 "Therefore my people have gone into captivity, Because they have no knowledge; Their honorable men are famished, And their multitude dried up with thirst.  Therefore the grave enlarges its appetite and opens its mouth without limit; into it will descend their nobles and masses with all their brawlers and revelers.  So man will be brought low and mankind humbled, the eyes of the arrogant humbled.
+                
+                Isaiah 57:9-16 "You went to Molech with olive oil and increased your perfumes. You sent your ambassadors far away; you descended to the grave itself!  You were wearied by all your ways, but you would not say, 'It is hopeless.' You found renewal of your strength, and so you did not faint.  "Whom have you so dreaded and feared that you have been false to me, and have neither remembered me nor pondered this in your hearts?  Is it not because I have long been silent that you do not fear me?  I will expose your righteousness and your works, and they will not benefit you.  When you cry out for help, let your collection of idols save you!  The wind will carry all of them off, a mere breath will blow them away. 
+                
+                But the man who makes me his refuge will inherit the land and possess my holy mountain."  And it will be said: "Build up, build up, prepare the road!  Remove the obstacles out of the way of my people."  For this is what the high and lofty One says—He who lives forever, whose name is holy: "I live in a high and holy place, but also with him who is contrite and lowly in spirit, to revive the spirit of the lowly and to revive the heart of the contrite.  I will not accuse forever, nor will I always be angry, for then the spirit of man would grow faint before me? the breath of man that I have created.
+                
+                Ezekiel 32:24 "There is Elam and all her multitude, All around her grave, All of them slain, fallen by the sword, Who have gone down uncircumcised to the lower parts of the earth, Who caused their terror in the land of the living; Now they bear their shame with those who go down to the Pit. On and on it goes.  That was a horrible thing, to have your life run by these creatures, that have no mercy for you whatsoever.
+                
+                <br><br>(The darkness and screaming in Hell)
+                I was lying in the cell and it went dark, pitch, pitch black.  I mean a darkness I have never ever felt before.  And I have been down in caves, way down in iron mines in Arizona.  There was a blackness that you couldn't even imagine.  I managed to crawl out, somehow I was able to crawl and they let me apparently.  I remembered where the door was so I crawled towards it and I felt my way, and I got outside the cell.
+                
+                I looked one direction, all black, and all I heard was screams, billions of people screaming in this place.  I knew there were billions, and it was so loud.  If you have ever heard someone scream before, it is so annoying.  Well if you hear billions of people screaming, you can't imagine how it affects your mind.  You just can't stand it. You hold your ears because it is so loud and penetrating.  You can't get away from the screams.
+                
+                And the fear that overcomes you is unbelievable.  Everything is dominated by fear. There is no presence of God in this place, so you have to endure the fear and the torment and the blackness.   You can't see anything. You can't even see what is coming up against you.
+                
+                Scripture talks about this darkness in Psalms 88:6 " You have laid me in the lowest pit, In darkness, in the depths. Revelation 16:10 "Then the fifth angel poured out his bowl on the throne of the beast, and his kingdom became full of darkness; and they gnawed their tongues because of the pain. Jude 1:13" Raging waves of the sea, foaming up their own shame; wandering stars for whom is reserved the blackness of darkness forever. And there is a darkness which may be felt, as shown in Exodus 10:21 Then the LORD said to Moses, "Stretch out your hand toward the sky so that darkness will spread over Egypt—darkness that can be felt." You can feel this darkness.  
+                
+                (The Fear In Hell)
+                <br>The fear, I got a tell you, was so powerful. It grips you. If you have ever seen some scary movie, where the fear jumps up in your throat, if you can take that  and multiply it by at least a thousand, and hold it there, that is how you stay all the time!  And I know something about fear.  When I was young, I use to surf.  When I was really young we were in Coco Florida surfing and there was a school (group) of sharks coming around me.
+                
+                And a 9 foot Tiger shark came up and bit my board right in a half.  And it grabbed me by the leg and pulled me down.  So my leg was in the mouth of this giant shark. I wasn't a Christian then; it was before I was even saved.  And all the sudden, it let me go.  I know God opened that shark's mouth.  But for a few moments, the fear that comes into you is absolute overwhelming.  If anybody ever saw JAWS, that fear was NOTHING compared to actually going through it.  The fear was terrifying.  
+                
+                The guy next to me was just a couple of feet away, and a shark ripped his leg right off!  And they dragged him up on the beach, with blood everywhere.  He was screaming and had no leg.  So I understand fear, but that fear was nothing, absolute nothing compared to the fear I felt in Hell, no comparison at all.  I think the fear I felt from the shark attack was one of the greatest fears we could experience on earth.
+                
+                So these are some of the things we have to endure in Hell.  In Isaiah 24:17 it says: " Fear and the pit and the snare are upon you, O inhabitant of the earth.  And it shall be that he who flees from the noise of the fear shall fall into the pit, and he who comes up from the midst of the pit shall be caught in the snare; for the windows from on high are open, and the foundations of the earth are shaken.
+                
+                Ted Koppel, during a presentation he did on "Night Line" a year and a half ago, visited some of the prisons in our country and spent the night there.  He couldn't believe how loud it was, that he couldn't sleep, everybody screaming at the top of their lungs. He said on TV that he was shocked by how people just scream and whining all night long.  So even in our earthly prisons, people are screaming, how much more in Hell.  In Job 18:14 it says that the wicked ways of a man, a persons who rejects the Lord... He is torn from the security of his tent and marched off to the king of terrors, The devil is certainly the King of terrors.
+                
+                (Desolate In Hell)
+                <br>I was now outside the cell and I looked this direction and as I looked this way I could see there was flames of fire, about 10 miles away from me.  I knew it was 10 miles.  And a pit of fire, about 3 miles across, had flames that lit up the skyline enough to see the landscape of Hell just a little bit.
+                
+                The darkness was so heavy; it just eats up any light.  But there was enough to just see some of the skyline.  It was all brown and desolate!  I mean absolutely not one green leaf, not anything of life of any kind, just stone, dirt and black sky, and smog in the skylight.
+                
+                The flames were really high, so I could see it.  There was a scripture in Deuteronomy 29:23 "The whole land is brimstone, salt, and burning; it is not sown, nor does it bear, nor does any grass grow there, like the overthrow of Sodom and Gomorrah, Admah, and Zeboiim, which the LORD overthrew in His anger and His wrath. There is no life whatsoever in Hell.  It is so strange to be in a world where there is no life.  Here we enjoy trees and fresh air, but there it is absolutely all dead.
+                
+                (Heat)
+                The heat was so intense, you can even describe it.  It says in Deuteronomy 32:24 "They shall be burnt with hunger, and devoured with burning heat, and with bitter destruction: I will also send the teeth of beasts upon them, with the poison of serpents of the dust. Jude 1:7 "As Sodom and Gomorrah, and the cities around them in a similar manner to these, having given themselves over to sexual immorality and gone after strange flesh, are set forth as an example, suffering the vengeance of eternal fire.
+                
+                Psalm 11:6 "Upon the wicked He will rain coals; Fire and brimstone and a burning wind shall be the portion of their cup". That's what is going on in Hell, it is so hot.  All these things should kill you, but you don't die!  You had to keep enduring all these things.  I wanted peace of mind, to get away from the screams and to get out of there.  It's like when you want to go home at night, when you had a rough day, you just want peace of mind. But there you endured all the screaming and all the torment.  And you never ever get away from it, ever.
+                
+                In Isaiah 57:21 it says: "There is no peace,"  Says my God, “for the wicked. You are also naked in Hell.  It is just another thing to have to endure.  Shame!  In Ezekiel 32:24  it talks about shame in the pit. "There is Elam and all her multitude, all around her grave, all of them slain, fallen by the sword, who have gone down uncircumcised to the lower parts of the earth, who caused their terror in the land of the living; Now they bear their shame with those who go down to the Pit" And in Job 26:6 "Sheol is naked before Him, and Destruction has no covering. That means God can see into Hell, so it is observable to Him.  But also you are naked in Hell, just another thing you have to go through.
+                <img src="images/Bill Wiese.jpg" alt="" class="bil">
+                (Dry)
+                <br> <br>There is no water in Hell, at all, no water.  There's no humidity in the air and no water of any kind.  It is so dry; you are desperate for a drop of water, just one.  Just like the scripture says in Luke 16:23-24, "And being in torments in Hades, he lifted up his eyes and saw Abraham afar off, and Lazarus in his bosom.  “Then he cried and said, ‘Father Abraham, have mercy on me, and send Lazarus that he may dip the tip of his finger in water and cool my tongue; for I am tormented in this flame"
+                
+                Abraham said, "Son remember", and then he went on to talk about his brothers.  He wanted him to just dip the tip of his finger in water, just to get one drop.  That would have been precious, one drop, but you never, ever get a drop.  It's hard to imaging how dry your mouth is.  If you can imagine doing a marathon run through Death Valley and having cotton in your mouth and staying there for days, and it just continues like that, just dry, absolute, desperate for a drop of water.
+                
+                Another thing this scripture revealed to me was we knew there was a great gulf fixed between them, in Hell; between Paradise and Hades.  And the rich man saw Abraham far off.  In the natural, how could he recognize Lazarus and Abraham?  First of all he never met Abraham and then to see someone that far away, you wouldn't really know who they were.  But there are just certain things you know in Hell.  You understand, like I was saying, the depths, how far away and so forth.
+                
+                Then one of the demons grabbed me, and drug me back into the cell and began all these torments again, which I really hate to talk about, because I don't like to have to re-live the torment.  They began to crush my skull.  One demon grabbed me and tried to crush my head. I was screaming and begging for mercy, but no mercy!  About this time they each grabbed an arm and a leg and were about to tear off my legs and my arms.  I thought, "I can't endure this, I can't endure this!"
+                
+                (Next To The Pit)
+                And all of a sudden, something grabbed me and pulled me out of this cell.  I know it was the Lord, but then I didn't know that.  I was there as an unsaved person, so I didn't know these things.  I just went there as if I had never accepted the Lord.  I was placed over next to the fire that I had seen.  I was standing along side that pit.  I was beneath a cavern, like a giant cave, with a tunnel going up.
+                
+                Along side the fire I could see through the flames, just enough to see bodies, people in the fire screaming, screaming for mercy, burning in this place!  And I knew I didn't want to go in there.  The pain I'd endured already was bad enough, but the heat from that flame I knew was worse.  These people were begging to get out.
+                
+                There were these big creatures lined all around the edge of this Pit, and as the people crawled up trying to get out, they would be shoved back in to the fire and not allowed out.  I thought, "Oh, this place is so horrible, so horrible and horrendous."
+                
+                All this is going on at the same time.  You're thirsty, you're hungry, and you're exhausted.  You don't get to sleep in Hell either.  You need sleep just as you do now.  Your body needs sleep.  Revelation 14:11 says, " And the smoke of their torment ascends forever and ever; and they have no rest day or night,... You never get to sleep.  You can imagine how that is, never sleeping. Regarding the water, in Zechariah 9:11, "I have sent forth thy prisoners out of the pit wherein is no water".
+                
+               <br><br> {Absolutely no water in Hell}
+                I knew that Hell's location is in the center of the earth.  That's were it's at, in the center of the earth.  I understood that I was about 3700 miles deep in the earth.  We know that the earth's diameter is 8000 miles.  Half way would be about 4000.  I was about 3700 miles down.
+                
+                In Ephesians 4:9 it says that Jesus descended into the lower parts of the earth. In Numbers 16:32 says, "And the earth opened its mouth and swallowed them up, with their households and all the men with Korah, with all their goods. That's were Hell is right now.  Later Hell and Death will be cast into the Lake of Fire and then cast into Outer Darkness.  That's after Judgment Day, but right now it is in the earth.
+                
+               <br> <br> (Demons)
+                I was along side this pit of fire and I saw all these demons all lined up along the walls, all sizes and shapes of every kind, deformed, ugly creatures, you can imagine.  They were twisted, deformed creatures, huge ones, small ones.  There were giant spiders, huge spiders this big. (5 feet tall)  Rats, snakes and worms, because the Bible talks about worms that cover thee (Isaiah 14:11).  There are all kinds of abominable creatures everywhere and they seemed to be chained to the walls.
+                
+                I wondered "Why are these things chained to the walls".  I didn't understand that, but there's a scripture on that in Jude 1:6 says, "And the angels who did not keep their proper domain, but left their own abode, He has reserved in everlasting chains under darkness for the judgment of the great day;"
+                
+                And so maybe that's what I saw, I don't know, but that is what it appeared to be.  I was glad because I didn't want them to get to me. They all hated me with a passion!  That was another thing I didn't understand, they weren't just creatures, they had hatred towards mankind.  So I was glad they were chained to the walls.
+                
+                I began to ascend up this pit in this tunnel, and to leave the flames.  Soon it got darker, but I could see all these demons along the walls and they had such awesome power.  I thought, "Who could fight off these creatures.  No one could fight these things."  But yet, that fear was so overwhelming, I just couldn't even stand the tolerating this fear.
+                
+                (NO HOPE)
+                The worse thing in Hell, the worse thing, worse than all the torments, was I understood that, first of all, that there was life going on up here on the earth.  And that people up here, most people, had no idea that this world even existed down here!  They don't even know this is a real world down here and there's billions of people suffering and begging for one chance, if they had an opportunity to get out.  But they never get a chance to get out, and being mad at themselves for not taking the opportunity to have received Jesus, that they are stuck there forever.
+                
+                This is the worse thing about Hell, that there was absolutely no hope of ever getting out.  I understood that.  I grasped eternity.  I could understand eternity.  Here on earth, we can't quite, can't get a hold of it.  But there I understood it.  I knew I would be there forever and ever, and had no hope of getting out.  I thought about my wife.  I could never get to my wife!  I've always told her that if we were ever separated by any kind of earthquake or something horrible, I said "I'll get to you.  I will find you.  I'll get to you if we're ever apart." 
+                
+                But here I couldn't get to her.  I could never see her again.  She would never have any idea were I was, and I just could never ever talk to her again.  That thought just absolutely bothered me terribly!  To not be able to talk to her, get to her, and for her not to know where I was, and have no hope to ever get out!  You understand, you never get out of here, ever!  See on earth there's always hope.  Even people in concentration camps had a hope of getting out, or dying at least, to get out of it.  But we've never experienced a totally hopeless situation.  In Isaiah 38:18 it says, "Those who go down to the pit cannot hope for Your truth." No hope, and the truth is Jesus.  He is the truth.
+                
+                <br>(Jesus appears)
+                About this time, I'm going up this tunnel, and I'm just in absolute fear, hopelessly lost, and fearing these demons.  All of the sudden, just all of the sudden, Jesus showed up!  "Praise you Lord", Jesus showed up. This bright light lit up the place.  I only saw His outline, the outline of a man.  I couldn't see his face, it was so bright.  I just looked into this light and saw His outline.  And I just fell on my knees and collapsed.  I couldn't do anything but worship Him.
+                
+                I was so grateful.  One second ago I was lost forever, and now all of the sudden I'm out of this place, because I had already known Jesus.  Those people can't get out, but I could because I was already saved.  I knew and understood that there was no way out of this place, only by Jesus.  He is the only way to keep from going to this place.
+                
+                In Revelation 1:6 it says John, "when he went to heaven, he saw Jesus, that His countenance was as the sun shining in its strength. And when he saw Him, he fell at His feet as a dead man".  That's just how I did.  I fell at His feet like a dead man.  Now you would think that I had a million questions to ask him, but when you're there, all you can do is worship Him and praise His Holy Name, and thank Him for what He saved us from.
+                
+                When I got my composure, at least enough to start forming thoughts, I thought about saying to the Lord, I don't even think I asked Him out loud, I just thought it and He answered me.  I said, "Lord why did You send me to this place?  Why did you send me here?"  He said to me "Because people do not believe that this place exists."  He said "Even some of my own people do not believe this place is real."  I was shocked at that statement.  I thought every Christian has got to believe in Hell.  But not everyone believes in a literal burning Hell.  I said Lord "why did you pick me?"  But He didn't answer me on that question.
+                
+                I have no idea why He picked me to go there.  I'm the least likely to go to this place.  My wife and I hate evil movies.  We hate anything bad.  I don't even like the summer time, much less heat. It's filthy.  There's no order.  It's all chaos and disorder and disgusting.  And I love everything orderly and excellent.  He didn't answer me on that question.  He said to me, "Go tell them that I hate this place, that it's not my desire for one of my creation to go to this place, not one!  I never made this for man.  This was made for the devil and his angels.  You have to go and tell them!  I've given you a mouth, you go and tell them."
+                
+                I thought to myself, "but Lord, they're not going to believe me.  They're going to think I'm crazy or had a bad dream."  I mean wouldn't you think that?  As I thought this the Lord answered me and He said, "It's not your job to convince them.  It's the Holy Spirit’s job!  You just go and tell them!"  And it was just inside, "Yes Sir!"  Absolutely, I have to go and tell them."
+                
+                You can't worry and fear what man is going to think of you, you just have to go and do it and let God do the rest.  Amen?  And I said, "Lord, why did they hate me so much?"  "Why did these creatures hate me?"  He said, "Because you're made in my image, and they hate me." You know the devil can't do anything against God.  He can't hurt God, per say, but he can hurt His creation.  That's why the devil hates mankind, and deceives him into taking him into Hell.  And he inflicts diseases upon him, anything he can do to hurt God's creation.
+                
+                (The Peace Of God)
+                <br><br>And then God flooded me with His thoughts.  He let me touch a piece of His heart, of how much He loves mankind.  Unbelievable, I couldn't even take it.  It was so overbearing.  The love He has for man, you can't take it in this body.  You know how much we love our wives and our children?  Well the love we have can't even be compared to the love God has for us.
+                
+                His love is infinitely greater than our love and our ability to love.  It's just the same as it says in Ephesian 3:19,.."to know the love of Christ which passes knowledge. It goes so far past knowledge, you can't even grasp it".  I couldn't believe how much He loved mankind, that He would die for just one person to not go to this place.  And it hurts Him so much to see one of His creation going to this place.  It pains the Lord, He weeps to see one person going.  And I felt so bad for the Lord.
+                
+                I felt His heart, He let me just touch a piece of His heart. He felt such sadness for His creation going there.  And I thought "I've got to go out and witness and take every last breath I have and go tell the world about Jesus, How good He is."  I mean, we have the gospel.  It's good news.  It's good news, and the world doesn't know.  They have to be told!  You know, we have to share this knowledge.  People just have a lack of knowledge in this area.  God wants us to share with them how good He is, and how He hates this place.
+                
+                He said to me also, "Tell them I am coming very, very soon."  And He said it again, "Tell them I'm coming very, very soon."  Now I think, why didn't I say to him, "What do you mean Lord?  What's 'soon' to you?"  That's how we think.  But I didn't ask.  You just don't think to ask those things then.  You just want to worship Him so much.  The peace of God that comes over you being next to Him is unexplainable.  I've been in anointed services, but there is no comparison to the love and the peace of God you feel being next to Him.
+                
+                And then I looked up and I saw those demons on the wall, that were so ferocious, they looked like ants on the wall!  They just looked like ants!  They were still big, but with the power of God next to you, all of God's creative power, they looked like ants on the wall.  I couldn't get over it.  I thought, "Lord they're just ants!"  And He said, "You just have to bind them and cast them out in my name."  I thought "boy, the power He's given the church."
+                
+                These things that were so ferocious, we were no match for a devil without Jesus, none.  They're ferocious, but with Him, they are nothing! A boldness rose up in me right then, when I saw these creatures I felt like saying, "you creatures were the ones torturing me, wanting to tear me apart?  Come on!  Come on now!"  Maybe a little bit of my flesh rose up or something, you know, I thought,Jesus get 'em."
+                
+                <br><br>(Leaving Hell)
+                As we left, we went up above the earth’s surface.  We went above, because we were still in a tunnel.  Soon I couldn't see it any more, but it was like a whirlwind, a giant whirlwind we were in.  We kept going up.  We had to go up, to get out of it apparently. When we got to the top of it, I looked down at the earth and it was about this high.  The curve of the earth was like that.  It's awesome to look back at the earth!  I know God allowed that for me.
+                
+                He could have left that tunnel any which way He wanted.  He knew in my heart, as a kid I always wanted to see what the earth looked like from space.  Maybe I watched too much Star Trek or something, you know?  I just thought it would be really neat to see the earth, and to see it hung on nothing.  Like the Bible says.  It says in Job 26:7, "He stretches out the north over empty space; He hangs the earth on nothing".
+                
+                As you look, you think, "What's holding this thing up?  What's making it turn so perfectly?"  God is in such control.  The power of God that flooded me, that He has, it's awesome.  He has so much power.  Every single thing is in His control.  Not a hair on your head falls to the ground that He doesn't know about.  Not a bird hits the ground that He doesn't know about.  I was flooded with these thoughts.  God has so much power.  It overwhelmed me.
+                
+                There's scripture in Isaiah 40:22 that says "The Lord sits upon the circle of the earth".  There I was upon the circle of the earth. I even thought, "Lord, how come before Christopher Columbus they could have read that scripture and known the earth was round." You know?  People wondered, they thought it was flat?
+                
+                Anyway, as we came back down we passed through the shields; I knew we were passing through the heat shield that was around the earth.  I just knew it.  I even thought stupid thought, here I am with God, and I thought, "I wonder how He's going to go through that shield?"   You know how in space they have to penetrate it at just the perfect angle.  We went through it with no problem what so ever.  No surprise!   I'm sure the Lord must have rolled His eyes and said 'I can handle that one'.
+                
+                There is a scripture in Psalm 47:9 that says,..."For the shields of the earth belong to God" He is in control of everything, everything.  I just didn't want Him to leave.  I just wanted to be in His presence.  We were coming up fast on California.  Just coming real fast, we were moving so quick, and came up to our house.  And I looked and I could see right through the roof of our house. And I could see myself lying on the floor.
+                
+                This really hit me strong, right here because I saw my body lying there and I thought, "That can't be me, I'm here, this is me!"  You know, you've never seen two of yourself.  Here I was laying there and I thought, "That's not really me."  And that scripture that Paul says, were we are just in a tent (2 Corinthians 5:1), that hit me so strong.
+                
+                I thought "that's just a tent, that's nothing.  That's temporary.  This is the real me."  This is what eternity is all about.  That life that we worry about, it also hit me that we're a vapor, that life is just a vapor as in James 4:14 it talks about "and how short this life is.  It's short.  A hundred years if you live, it's nothing!  It goes up like a vapor.  And I thought, "We’ve got to live for God."  What we do now, here, counts for eternity.  We've got to witness.  We've got to get out there and save the lost.  We can't worry about all these little petty things that we all get so tied up in and hung up on.  We need to really get out there and preach the gospel and the good news, because this is over real quick.
+                
+                But I saw my body lying there and I thought it was just as if you got out of your car and looked back at your car.  That's not you, it's your car.  It just gets you around.  That's how it looked to me.  It just gets me around here on the earth, but this is the real me.  And I thought, "Lord don't leave, don't leave".  I just want to stay with You for a while. But He left.  I came up to my body, and something pulled me back into my body, like I was sucked back into my nose or my mouth.
+                
+                Right then, when He left, that's when all the fear, the torture, and the torment came back into my mind!  Because it says in the Bible (1 John 4:18), "Perfect love casts off fear."  So I was next to perfect love all that time, so that left me, and when He left, all of the sudden all of the fear and the horrors of Hell entered my mind.  I couldn't stand it, I couldn't stand it!  I was screaming.  I was in agony.  I couldn't live with it. I knew that this body was not capable of withstanding that kind of fear.  You can't hold up under that kind of pressure.  Your body isn't strong enough.  So that's when I prayed and I was able to pray, "Take it out of my mind!"
+                
+                In the natural, you would have to go through all kinds of counseling to get through this kind of trauma, but God took it out, instantly took it out, the trauma.  He left the memory, but took the trauma and the fear out.  I was so grateful. Anyway, after this, so many things happened, I wish we had time to go into all that God confirmed would happened to me.
+                
+                If there's someone here tonight, that doesn't know the Lord; you have to ask yourself a question.  You have to say, "Do I believe these people, that what they saw is real, all these people and myself ? But more importantly, what the Word of God says about Hell.  Do you want to take that chance and say, "No I don't believe it, I don't believe that's real."  You have to throw out all the Word of God, and all of us trying to tell you.  Are you willing to take that chance with your whole eternity?
+                
+                That would seem pretty foolish to me.  You can't let the devil deceive you.  That big creature in the end there, that was laughing. That's how the devil would be when you got to Hell.  He would laugh, because you had an opportunity to receive the Lord and you missed it.  But once you're there, there is no turning back.  There's absolutely no turning back. You would be there lost for ever.
+                
+                You might be saying to yourself.  "I'm pretty good.  I'm a pretty good person. I don't deserve that place."  And you probably are pretty good, compared to most people.  But that's not what you need to compare yourself to.  We need to compare ourselves to God's standard. His standard is so much higher than ours.  He says in the Word that if you lie once, just once in your whole life, that makes you a liar.
+                
+                If you've stole one thing in your life, a paper clip, a couple minutes of your boss's time, anything, just once.  That makes you a thief.  If you were angry without cause, if you didn't forgive someone that did something wrong against you, if you lusted after a women, any of these things, if you just did it one time, that makes you a sinner, and you can't make it to heaven.  So you see all of us come short.  We all fall short and can't get there on our own works. 
+                
+                Titus 3:5 says, "Not by works of righteousness which we have done, but according to His mercy He saved us". Amen, so it depends on how you compare.  It's like a woman that saw a flock of sheep on a hill, and they were all so white and beautiful against this hill.  She said, "Look at those white sheep, look how beautiful they look, so white."  She went to bed and overnight it snowed.  She looked up the next morning and saw the sheep and they all looked dull, dingy and gray compared to the white snow.  So we need to compare ourselves to God.
+                
+                His standard is way higher than ours.  So we have need of a Savior.  We can't get there on our own.  God made it a free gift.  He said in John 14:6, "I am the way, the truth, and the life.  No man come unto the Father but by Me."  He's the only way out of this place.
+                
+                So if there's anyone here who doesn't know the Lord, anyone here who really has never asked Jesus to be Lord and Savior of your life.  You never really came to that point where you really had to voice it out your own mouth and ask Him to come into your life, would you stand up?  If there's anybody here would you stand up now, for Jesus?  Don't let the devil, that creature laugh at you.  Stand up now, when you have the chance, cause you don't know how much time we have.  You don't know that you might die tomorrow, and end up in that place.
+                
+                Let me tell you, that place, just the heat alone would be horrible to endure.  Those people that we saw jump out of the New York towers.  They held hands and jumped.  How horrible that must have been.  You know if you've ever been up high and looked down, to jump would be unthinkable.  But they had to face that heat.
+                
+                And that was only for about five seconds, it would have incinerated them and that was about two thousand degrees.  Scientists say that in the center of the earth is about twelve thousand degrees.  So you have to endure that for eternity.  If you're willing to go through that, that would be awfully foolish.  Now is the time....
+                
+                (Announcer Speaking) <br> <br>
+                The Bible is real plain, we are all sinners, and whoever will call on the name of the Lord will be saved.  Jesus said if you will confess me before men, publicly, then I will in turn; confess your name before my heavenly Father and the Holy angels.  But if you deny me before men, I will deny you before my Father.  I want to ask you to do something.
+                
+                If you've never publicly, in front of other people, if you've never publicly declared Jesus Christ as your Savior, and made Him the Lord of your life, or if you're unsure whether heaven is your eternal home, remember Jesus hung naked on a cross, in a market place, he hung there for you, He endured your shame.
+                
+                If you'll pray this prayer from the depths of your heart, God will save your soul, and He'll give you an opportunity in the not to distant future for you to make it public.  Pray with us, especially those who are in the congregation and know you should.  "God I believe in You.  You are my Creator.  I am a sinner.  I sinned in many points, willfully, and unconsciously.
+                
+                I've fallen short.  I've missed the mark.  I'm stained with sin.  Jesus I believe in You.  You are the eternal Son of God.  You're the Lamb of God, who takes away the sin of the world, who takes away my sin.  I believe You died on a cross.  Shedding Your innocent blood for my guilty soul.
+                
+                I believe You were buried and on the third day You arose.  You are alive forever more.  I call You my Lord.  I call You my Savior.  I give You my life.  I will love You, serve you for the rest of my days.  I belong to You, the good parts, the bad parts, the sinful parts, all my plans, all my dreams, I give everything to you.  Thy will be done in me.  I believe I'm saved.  Not by good works, but by faith, by trusting in You.  In Jesus I pray.  Amen."
+                
+                LOUD, LONG APPLAUSE;
+                That response is perfectly appropriate. The Bible says Heaven has no greater joy than when one sinner repents.  And we only know a pale example of what goes on in heaven when it witnesses what you've done today.  I want to address the rest of you, and then I'm going to drop out of this.  I want to give an alter call for those of us who've witnessed this.
+                
+                We're really most fortunate to hear brother Bill tell what he experienced.  I'm going to issue a challenge to you and I really would warn you, don't accept this unless you're ready for some activity of the Spirit in your lives.  I'm not trying to be flippant, I'm just saying don't make this your confession unless you really mean it, and here's what it is.  It's got two parts.  One, I will no longer fear the face of man.
+                
+                The biggest single inhibitor to us acting like you really know there's a Heaven and there's a Hell.  I will no longer fear the face of man.  Two, I will talk to everyone I know, the rest of my life about Jesus, and Heaven, and Hell.  That is a huge commitment.  Every person I know who reached people for Christ came to these two points of commitment. Why else have a relationship with anyone, if not to share with them the glorious good news that saves their soul from Hell.
+                
+                It's a felony in the Spirit to know someone, to converse with them, to entertain yourselves with them, to enjoy their presence, and never tell them that, without Christ, they are going to Hell.  Every relationship is to be a doorway to communicate the truth that you've witnessed today.  That's logical.  If you're not ready to do that, I understand.  But if you're ready to make those two commitments, if you agree, say this to God, "God I believe in You.  I believe in Jesus Your Son, Your precious Holy Spirit.  I receive the challenge of the hour. I declare of myself, this is my confession.  I will no longer fear the face of man.  I will not concern myself with the opinion of man.
+                
+                My reputation is of no importance.  I hate the fear of man.  I will tell everyone I know for the rest of my life about You Lord Jesus.  About Heaven and a place called Hell.  I step over the line.  I will no longer be indifferent, preoccupied, not caring.  I accept Your word.  I will not fear, and I will speak up.  This is my confession to Almighty God."  Raise up Your army God, all over this city, nation, and world, a people who have rightly discerned the times in which they live.
+                
+                A people who have come to understand eternity is the next moment away, to see with clarity into the glory of Heaven and the horrors of Hell, and order their priorities to obey God.  Now, we ask for grace.  They've made a bold confession God.  Without Your grace, it will not come to past.  We believe Your grace is sufficient to do what the word of God tells us to do.  Grace, Grace, Grace upon Your people here, in JESUS name</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to open a modal and make background black
+        function openModal(id) {
+            let modal = document.getElementById(id);
+            modal.style.display = "flex";
+            modal.classList.add("active"); // Adds black background
+        }
+
+        // Function to close a modal and reset background
+        function closeModal(id) {
+            let modal = document.getElementById(id);
+            modal.style.display = "none";
+            modal.classList.remove("active"); // Removes black background
+        }
+    </script>
+     <!-- <h2>Divine Revelation Of Heaven And Hell By Iyah Melea</h2>
+     <p>
+         My name is Melea, I’m 21 years old Melea and live in Quezon City, Philippines. 
+         I was raised a Christian, I knew my religion, but I didn’t know God. 
+         When I was a teenager (13-16 years) I became a carnal Christian and I went to church but also loved the world. 
+         Until one day, on March 2011 my mom brought me the testimony of Angelica Zambrano (A girl who testified heaven and hell). 
+         After reading, I cried repenting and confessing all of my sins.
+     </p> -->
+<!--  
+     <div id="moreText">
+         <p>
+             That night, I prayed sincerely, asking Jesus to change my life completely. 
+             From that moment, I felt a new fire in my heart. The more I sought Jesus, the more I experienced His presence. 
+             One night, while in deep prayer, I had a vision of heaven and hell. Jesus showed me the beauty of His kingdom and the suffering of those who rejected Him. 
+             My life was never the same after that encounter. I now dedicate my life to sharing His love and truth.
+         </p>
+     </div>
+ 
+     <button class="read-more-btn" onclick="toggleText()">Read More</button>
+ 
+     <script>
+         function toggleText() {
+             var moreText = document.getElementById("moreText");
+             var btn = document.querySelector(".read-more-btn");
+ 
+             if (moreText.style.display === "none") {
+                 moreText.style.display = "block";
+                 btn.textContent = "Read Less";
+             } else {
+                 moreText.style.display = "none";
+                 btn.textContent = "Read More";
+             }
+         }
+     </script> -->
+ 
+
+</body>
+</html>

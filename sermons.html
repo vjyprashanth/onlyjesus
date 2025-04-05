@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input, select {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .sermons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .sermon {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .sermon:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .search-filter {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> email@example.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> 123 Street, City</span>
+            <span><i class="fas fa-phone"></i> +123 456 7890</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+ 
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+<!-- header strats here -->
+<nav class="navbar">
+    <div class="logo">Yashua Ministries</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="about.html">About Us</a></li> -->
+        <li><a href="events..html">Events</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="Hellfire.html">Hellfire</a></li>
+       
+        <li>
+            <a href="songs.html">Songs &#9662;</a>
+            <!-- <ul class="dropdown">
+                <li><a href="album.html">Albums</a></li>
+                <li><a href="vidoes.html">Videos</a></li>
+                
+            </ul> -->
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    <div class="container">
+        <h1>Sermons</h1>
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Search sermons..." onkeyup="filterSermons()">
+            <select id="topicFilter" onchange="filterSermons()">
+                <option value="">All Topics</option>
+                <option value="Faith">Faith</option>
+                <option value="Prayer">Prayer</option>
+                <option value="Love">Love</option>
+                <option value="Grace">Grace</option>
+            </select>
+        </div>
+        <div class="sermons" id="sermonList">
+            <div class="sermon" data-topic="Faith">
+                <h3>Faith and Patience</h3>
+                <p>Speaker: John Doe</p>
+                <p>Faith and patience go hand in hand. Hebrews 6:12 tells us, "Through faith and patience, we inherit the promises." Faith believes, and patience waits with trust. When trials come, patience strengthens our faith, helping us stand firm.</p>
+                <p>Consider Abraham—he waited years for God's promise to be fulfilled, yet he remained steadfast. If we trust God's timing, we will see His promises come to pass in our lives. Stay strong, keep believing, and let patience do its perfect work.</p>
+            </div>
+            <div class="sermon" data-topic="Prayer">
+                <h3>Power of Prayer</h3>
+                <p>Speaker: Jane Smith</p>
+                <p>Prayer is a powerful tool that connects us to God. James 5:16 reminds us, "The prayer of a righteous person is powerful and effective." When we pray, we align ourselves with God's will and invite His presence into our lives.</p>
+                <p>Jesus often withdrew to pray, showing us the importance of seeking God in all circumstances. Prayer brings peace, guidance, and breakthroughs. No matter what you are facing today, take time to pray, trust in God's power, and watch Him work in your life.</p>
+            </div>
+            <div class="sermon" data-topic="Love">
+                <h3>Walking in Love</h3>
+                <p>Speaker: Mark Johnson</p>
+                <p>Love is the foundation of the Christian faith. 1 Corinthians 13:13 says, "And now these three remain: faith, hope, and love. But the greatest of these is love." Walking in love means showing kindness, forgiveness, and patience to those around us.</p>
+                <p>Jesus demonstrated perfect love by sacrificing Himself for us. When we choose to love unconditionally, we reflect God's character and bring light into the world. Let us walk in love daily, lifting others up and living as Christ called us to.</p>
+            </div>
+            <div class="sermon" data-topic="Grace">
+                <h3>The Grace of God</h3>
+                <p>Speaker: Emily Davis</p>
+                <p>Grace is God's unmerited favor toward us. Ephesians 2:8-9 states, "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, so that no one may boast." God's grace is not something we earn—it is freely given to us through Jesus Christ.</p>
+                <p>Through grace, we are forgiven, redeemed, and empowered to live righteous lives. It teaches us to rely on God's strength rather than our own. Let us embrace His grace daily, extending it to others just as He has so graciously given it to us.</p>
+                <p>God's grace is abundant and never-ending. It is the reason we can approach Him with confidence, knowing that He loves us despite our flaws. When we understand grace, we live in gratitude and humility, seeking to share the same grace with others.</p>
+                <p>As we grow in our relationship with God, we realize that His grace transforms us. It softens our hearts, renews our minds, and leads us to a life of greater purpose. Let us continue to walk in His grace, trusting Him in all things.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function filterSermons() {
+            let search = document.getElementById("search").value.toLowerCase();
+            let topic = document.getElementById("topicFilter").value;
+            let sermons = document.querySelectorAll(".sermon");
+            
+            sermons.forEach(sermon => {
+                let title = sermon.querySelector("h3").innerText.toLowerCase();
+                let sermonTopic = sermon.getAttribute("data-topic");
+                
+                if ((title.includes(search) || search === "") && (topic === "" || sermonTopic === topic)) {
+                    sermon.style.display = "block";
+                } else {
+                    sermon.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
